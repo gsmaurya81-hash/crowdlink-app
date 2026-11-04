@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/shopify_integration/views.py", line 190, in background_sync
+    raise RuntimeError(result.get('error'))
+RuntimeError: name 'record_cutoff' is not defined
+
+--- Shopify Sync Error ---
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/shopify_integration/views.py", line 138, in background_sync
+    raise RuntimeError(result.get('error'))
+RuntimeError: post-sync refresh failed - identifiers: Product has no field named 'combined_sku_bar'
+
+--- Square Sync Error ---
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/square_integration/views.py", line 137, in background_sync
+    raise RuntimeError(result.get('error'))
+RuntimeError: post-sync refresh failed - identifiers: Product has no field named 'combined_sku_bar'
+
+--- Square Sync Error ---
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/square_integration/views.py", line 137, in background_sync
+    raise RuntimeError(result.get('error'))
+RuntimeError: post-sync refresh failed - sales_summaries: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'"); reporting_dates: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")

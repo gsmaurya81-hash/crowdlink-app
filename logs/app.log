@@ -1,0 +1,1881 @@
+2026-10-07 09:39:02,151 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:40:02,184 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:41:01,405 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:42:01,819 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:43:01,509 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:44:02,224 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:45:02,460 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:46:01,814 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:47:01,440 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:48:01,863 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:49:01,536 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:50:02,116 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:51:02,082 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:52:01,497 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:53:02,100 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:54:01,802 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:55:02,257 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:56:01,614 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:57:02,280 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:58:02,277 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 09:59:02,022 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:00:01,958 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:01:02,095 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:02:01,491 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:03:01,919 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:04:01,786 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:05:01,632 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:06:02,094 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:07:01,522 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:08:01,937 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:09:02,085 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:10:02,079 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:11:01,384 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:12:01,822 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:13:01,424 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:14:02,109 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:15:01,901 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:16:02,274 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:17:01,951 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:18:02,361 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:19:02,083 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:20:01,803 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:21:02,139 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:22:01,529 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:23:01,582 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:24:02,296 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:25:01,523 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:26:01,949 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:27:01,587 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:28:02,005 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:29:01,719 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=sqlite3)
+2026-10-07 10:36:02,113 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=mysql)
+2026-10-07 10:37:02,052 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=mysql)
+2026-10-07 10:38:01,461 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=mysql)
+2026-10-07 10:39:02,150 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=mysql)
+2026-10-07 10:40:02,177 [INFO] crowdlink.audit: [CHECK_LOGS] test line from crowdlink.audit (engine=mysql)
+2026-10-08 03:19:00,969 [INFO] crowdlink.audit: LOCATION_CREATE email=scott@replicat.com.au location=b9a7b2cc-f2ba-441c-89cd-63404d7055c5 name=Ballina RSL
+2026-10-08 03:19:25,516 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=scott@replicat.com.au state=running
+2026-10-08 03:19:43,945 [INFO] crowdlink.audit: SUMMARY_UPDATE email=scott@replicat.com.au summary=9ae03e98-17d1-43de-9836-32fed52f75ae date=2026-10-06 fields=['location', 'locid', 'assigned_location']
+2026-10-11 07:17:08,240 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=152.58.17.24 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36'
+2026-10-11 07:17:08,372 [WARNING] crowdlink.audit: MIGRATE_DB_DONE
+2026-10-11 07:20:08,945 [INFO] crowdlink.audit: LOCATION_CREATE email=soham.m@edreamz.in location=37b3d114-a9ab-4f05-bedc-be66a9866e42 name=ma
+2026-10-11 07:20:25,316 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f48d95e9-4ee6-44c9-ab88-4f378fd50206 rows=1 changes={'category': 'Other Merch', 'report_to_aria': 'False'}
+2026-10-11 07:29:03,004 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f48d95e9-4ee6-44c9-ab88-4f378fd50206 rows=1 changes={'category': 'CD Album', 'report_to_aria': 'True'}
+2026-10-11 07:29:07,269 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f48d95e9-4ee6-44c9-ab88-4f378fd50206 rows=1 changes={'release_date': '2026-10-15', 'all_presales_loaded': 'False'}
+2026-10-11 07:29:26,860 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=c1f1ca26-6424-447a-be0d-8d4236a8f079 rows=1 changes={'release_date': '2026-10-30', 'all_presales_loaded': 'False'}
+2026-10-11 07:29:31,151 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=987237be-4625-4a87-a212-e77e84df4350 rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-11 07:33:10,748 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=8979535d-999f-4150-85a4-1a13163005a8 rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-11 07:33:16,163 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=8979535d-999f-4150-85a4-1a13163005a8 rows=1 changes={'category': 'Other Merch', 'report_to_aria': 'False'}
+2026-10-11 07:33:20,483 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=8979535d-999f-4150-85a4-1a13163005a8 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 07:33:49,390 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=72303113-2ff5-4549-8104-9e4319b2d530 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 07:33:58,206 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=72303113-2ff5-4549-8104-9e4319b2d530 rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-11 09:54:53,265 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=8979535d-999f-4150-85a4-1a13163005a8 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 09:55:11,279 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=85c2a410-a680-488b-b2a4-749dd8c6b295 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 09:55:15,135 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=85c2a410-a680-488b-b2a4-749dd8c6b295 rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-11 09:55:30,303 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=4d5830e2-792b-4287-acf4-73f86395bf2b rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 09:55:33,439 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=4d5830e2-792b-4287-acf4-73f86395bf2b rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-11 13:01:37,732 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f48d95e9-4ee6-44c9-ab88-4f378fd50206 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 13:01:45,439 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f48d95e9-4ee6-44c9-ab88-4f378fd50206 rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-11 13:02:14,541 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running
+2026-10-11 13:02:48,451 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=379bd455-72dd-4f96-929c-ef828ec3f5ab rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 13:02:51,646 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=379bd455-72dd-4f96-929c-ef828ec3f5ab rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-11 13:04:40,730 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=18938820-000d-409a-9dcc-2e101c16c9a6 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 13:04:45,056 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=18938820-000d-409a-9dcc-2e101c16c9a6 rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-11 13:05:16,037 [INFO] crowdlink.audit: SUMMARY_UPDATE email=soham.m@edreamz.in summary=86853960-4f77-4009-8c76-60ff779fdc8e date=2026-10-02 fields=['notes']
+2026-10-11 13:05:36,100 [INFO] crowdlink.audit: STORE_DISCONNECT platform=SHOPIFY email=soham.m@edreamz.in store=ita3-0.myshopify.com
+2026-10-11 13:07:34,691 [INFO] crowdlink.audit: STORE_CONNECT platform=SQUARE email=soham.m@edreamz.in store=ML4RHP0N1HDQB new_connection=True
+2026-10-11 13:08:24,761 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 13:08:29,004 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-11 13:08:38,598 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-11 13:08:43,309 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'release_date': '2026-10-12', 'all_presales_loaded': 'False'}
+2026-10-12 04:43:30,785 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=fa43d943-53bc-4f25-bf42-27e2f01a6cfe rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-12 04:43:36,978 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=fa43d943-53bc-4f25-bf42-27e2f01a6cfe rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 04:44:04,402 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=fa43d943-53bc-4f25-bf42-27e2f01a6cfe rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 04:44:48,862 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=fa43d943-53bc-4f25-bf42-27e2f01a6cfe rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 05:09:41,303 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=fa43d943-53bc-4f25-bf42-27e2f01a6cfe rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-12 05:09:54,304 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=fa43d943-53bc-4f25-bf42-27e2f01a6cfe rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 05:10:16,473 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=fa43d943-53bc-4f25-bf42-27e2f01a6cfe rows=1 changes={'json_bundle': "[{'product_id': '00d7d300-4cb5-4b22-a49a-21190e9ebbc1', 'bundle_unitprice': 44}]"}
+2026-10-12 05:11:02,429 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=fa43d943-53bc-4f25-bf42-27e2f01a6cfe rows=1 changes={'category': 'CD Single', 'report_to_aria': 'True'}
+2026-10-12 05:23:14,326 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-12 05:23:28,884 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 05:23:35,440 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'json_bundle': "[{'product_id': '72cfa1dd-952c-41c1-870b-4fdd78beed72', 'bundle_unitprice': 33.0}]"}
+2026-10-12 05:23:55,009 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'CD Single', 'report_to_aria': 'True'}
+2026-10-12 05:24:01,668 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'Event Ticket', 'report_to_aria': 'False'}
+2026-10-12 05:24:05,591 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 05:24:20,032 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'CD Single', 'report_to_aria': 'True'}
+2026-10-12 05:31:56,762 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'json_bundle': "[{'product_id': '0d378beb-be82-4943-9ec8-6329b8e35596', 'bundle_unitprice': 1000.0}]"}
+2026-10-12 05:32:10,971 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'json_bundle': 'None'}
+2026-10-12 05:32:17,505 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'CD Album', 'report_to_aria': 'True'}
+2026-10-12 05:32:21,430 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 05:32:25,964 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'report_to_aria': 'False'}
+2026-10-12 05:32:29,015 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'report_to_aria': 'True'}
+2026-10-12 05:33:27,041 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-12 05:33:31,986 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 05:33:45,557 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': "[{'product_id': '9395c8c9-3aee-492b-93a9-9af0084bd35c', 'bundle_unitprice': 1.0}]"}
+2026-10-12 05:33:47,886 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': 'None'}
+2026-10-12 05:33:52,127 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Vinyl Album 2LP', 'report_to_aria': 'True'}
+2026-10-12 05:38:09,770 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-12 05:38:14,346 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'Tee', 'report_to_aria': 'False'}
+2026-10-12 06:02:41,966 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 06:02:54,812 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'json_bundle': "[{'product_id': '81838729-556a-45f0-a8f3-0415cdf4db63', 'bundle_unitprice': 100.0}]"}
+2026-10-12 06:03:42,556 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'json_bundle': 'None'}
+2026-10-12 06:03:48,686 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'CD Album', 'report_to_aria': 'True'}
+2026-10-12 06:04:53,398 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 06:05:01,132 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': "[{'product_id': '9395c8c9-3aee-492b-93a9-9af0084bd35c', 'bundle_unitprice': 1000.0}]"}
+2026-10-12 06:13:03,530 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running
+2026-10-12 06:44:46,860 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=0d378beb-be82-4943-9ec8-6329b8e35596 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 06:45:08,614 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=0d378beb-be82-4943-9ec8-6329b8e35596 rows=1 changes={'json_bundle': "[{'product_id': 'f8f516bc-c948-4b11-95a3-e0a212585611', 'bundle_unitprice': 10.0}]"}
+2026-10-12 06:53:58,010 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': "[{'product_id': '9395c8c9-3aee-492b-93a9-9af0084bd35c', 'bundle_unitprice': 1000.0}, {'product_id': 'f8f516bc-c948-4b11-95a3-e0a212585611', 'bundle_unitprice': 1.0}]"}
+2026-10-12 06:54:00,828 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': "[{'product_id': '9395c8c9-3aee-492b-93a9-9af0084bd35c', 'bundle_unitprice': 1000.0}]"}
+2026-10-12 06:54:02,337 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': 'None'}
+2026-10-12 06:54:12,224 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Vinyl Album 2LP', 'report_to_aria': 'True'}
+2026-10-12 06:54:35,632 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=0d378beb-be82-4943-9ec8-6329b8e35596 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 06:54:41,231 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 06:54:50,265 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': "[{'product_id': '0d378beb-be82-4943-9ec8-6329b8e35596', 'bundle_unitprice': 0.0}]"}
+2026-10-12 06:54:57,599 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=0d378beb-be82-4943-9ec8-6329b8e35596 rows=1 changes={'report_to_aria': 'False'}
+2026-10-12 06:55:01,066 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=0d378beb-be82-4943-9ec8-6329b8e35596 rows=1 changes={'report_to_aria': 'True'}
+2026-10-12 06:55:19,199 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 06:55:40,794 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f8f516bc-c948-4b11-95a3-e0a212585611 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 06:55:47,484 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f8f516bc-c948-4b11-95a3-e0a212585611 rows=1 changes={'json_bundle': "[{'product_id': '81838729-556a-45f0-a8f3-0415cdf4db63', 'bundle_unitprice': 7.0}]"}
+2026-10-12 06:55:49,430 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f8f516bc-c948-4b11-95a3-e0a212585611 rows=1 changes={'json_bundle': 'None'}
+2026-10-12 06:55:53,973 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f8f516bc-c948-4b11-95a3-e0a212585611 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 07:02:41,347 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:02:56,784 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'json_bundle': "[{'product_id': '81838729-556a-45f0-a8f3-0415cdf4db63', 'bundle_unitprice': 1.0}]"}
+2026-10-12 07:03:03,103 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'json_bundle': 'None'}
+2026-10-12 07:03:07,070 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 07:03:16,645 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=f8f516bc-c948-4b11-95a3-e0a212585611 rows=1 changes={'release_date': '2026-10-13', 'all_presales_loaded': 'False'}
+2026-10-12 07:03:27,029 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:03:31,109 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': 'None'}
+2026-10-12 07:03:38,019 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:03:45,143 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': "[{'product_id': 'f8f516bc-c948-4b11-95a3-e0a212585611', 'bundle_unitprice': 2.0}]"}
+2026-10-12 07:03:48,636 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 07:03:52,853 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:03:54,579 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': 'None'}
+2026-10-12 07:04:01,479 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Vinyl Single', 'report_to_aria': 'True'}
+2026-10-12 07:04:07,634 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:19:22,686 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': "[{'product_id': 'f8f516bc-c948-4b11-95a3-e0a212585611', 'bundle_unitprice': 3.0}]"}
+2026-10-12 07:19:29,720 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-12 07:19:34,323 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:19:38,092 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-12 07:19:44,056 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:19:52,684 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Other Merch', 'report_to_aria': 'False'}
+2026-10-12 07:19:57,457 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:19:59,752 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': 'None'}
+2026-10-12 07:20:05,948 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:20:23,282 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 07:20:28,612 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:20:37,182 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 07:20:41,677 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:23:00,811 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=9395c8c9-3aee-492b-93a9-9af0084bd35c rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 07:23:13,169 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': "[{'product_id': '0d378beb-be82-4943-9ec8-6329b8e35596', 'bundle_unitprice': 1.0}]"}
+2026-10-12 07:25:14,994 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 07:25:19,928 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:25:36,429 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'CD Album', 'report_to_aria': 'True'}
+2026-10-12 07:25:40,039 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:26:22,047 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'CD Album', 'report_to_aria': 'True'}
+2026-10-12 07:26:25,804 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:31:02,294 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 07:31:07,176 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:31:27,653 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'json_bundle': 'None'}
+2026-10-12 07:31:33,333 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=81838729-556a-45f0-a8f3-0415cdf4db63 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 07:54:54,253 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 07:55:11,406 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'json_bundle': "[{'product_id': '72cfa1dd-952c-41c1-870b-4fdd78beed72', 'bundle_unitprice': 33.0}, {'product_id': 'fa43d943-53bc-4f25-bf42-27e2f01a6cfe', 'bundle_unitprice': 22.0}]"}
+2026-10-12 07:55:28,539 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=85722020-1037-4f37-b3e7-3a7f4520b379 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 09:00:59,767 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com new_connection=True
+2026-10-12 09:38:06,170 [WARNING] crowdlink.audit: STORE_CONNECT_BLOCKED platform=SHOPIFY email=divyangikk02@gmail.com store=ita3-0.myshopify.com reason=already_connected owner_email=piyushdadhich5445@gmail.com owner_connection=a999b73c-12ad-49ae-9d09-97704e7d01df
+2026-10-12 09:38:54,261 [WARNING] crowdlink.audit: STORE_CONNECT_BLOCKED platform=SHOPIFY email=divyangikk02@gmail.com store=ita3-0.myshopify.com reason=already_connected owner_email=piyushdadhich5445@gmail.com owner_connection=a999b73c-12ad-49ae-9d09-97704e7d01df
+2026-10-12 09:39:26,974 [INFO] crowdlink.audit: STORE_DISCONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com
+2026-10-12 09:40:11,112 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=divyangikk02@gmail.com store=ita3-0.myshopify.com new_connection=True
+2026-10-12 09:41:14,010 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=f63a1039-c276-4436-903f-40990ae9c333 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 09:41:31,990 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=f63a1039-c276-4436-903f-40990ae9c333 rows=1 changes={'json_bundle': "[{'product_id': '74bc76fd-a380-4af8-9caa-145abe95b8e3', 'bundle_unitprice': 300.0}]"}
+2026-10-12 09:42:01,855 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=f63a1039-c276-4436-903f-40990ae9c333 rows=1 changes={'json_bundle': "[{'product_id': '74bc76fd-a380-4af8-9caa-145abe95b8e3', 'bundle_unitprice': 300.0}, {'product_id': 'da23ef4d-a173-4f02-9fdc-342fe14438c0', 'bundle_unitprice': 50.0}]"}
+2026-10-12 09:42:08,786 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=f63a1039-c276-4436-903f-40990ae9c333 rows=1 changes={'json_bundle': "[{'product_id': 'da23ef4d-a173-4f02-9fdc-342fe14438c0', 'bundle_unitprice': 50.0}]"}
+2026-10-12 09:42:18,936 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=da23ef4d-a173-4f02-9fdc-342fe14438c0 rows=1 changes={'category': 'Event Ticket', 'report_to_aria': 'False'}
+2026-10-12 09:42:25,202 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=da23ef4d-a173-4f02-9fdc-342fe14438c0 rows=1 changes={'category': 'Vinyl Single', 'report_to_aria': 'True'}
+2026-10-12 09:42:27,516 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=da23ef4d-a173-4f02-9fdc-342fe14438c0 rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-12 09:42:30,341 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=da23ef4d-a173-4f02-9fdc-342fe14438c0 rows=1 changes={'category': 'CD Single', 'report_to_aria': 'True'}
+2026-10-12 09:42:34,526 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=da23ef4d-a173-4f02-9fdc-342fe14438c0 rows=1 changes={'category': 'Headwear', 'report_to_aria': 'False'}
+2026-10-12 09:42:44,601 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=da23ef4d-a173-4f02-9fdc-342fe14438c0 rows=1 changes={'category': 'Event Ticket', 'report_to_aria': 'False'}
+2026-10-12 09:44:56,655 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=f63a1039-c276-4436-903f-40990ae9c333 rows=1 changes={'category': 'Vinyl Album 2LP', 'report_to_aria': 'True'}
+2026-10-12 09:44:59,015 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=f63a1039-c276-4436-903f-40990ae9c333 rows=1 changes={'release_date': '2026-10-26', 'all_presales_loaded': 'False'}
+2026-10-12 09:45:01,217 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=da23ef4d-a173-4f02-9fdc-342fe14438c0 rows=1 changes={'release_date': '2026-10-28', 'all_presales_loaded': 'False'}
+2026-10-12 09:45:05,287 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=c72e726a-60a2-4f32-af78-c0629acb6343 rows=1 changes={'release_date': '2026-10-17', 'all_presales_loaded': 'False'}
+2026-10-12 09:45:09,708 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=a8f65fbc-48d0-48bc-acc3-0ccb5f1f55e8 rows=1 changes={'release_date': '2026-12-24', 'all_presales_loaded': 'False'}
+2026-10-12 09:45:13,882 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=f63a1039-c276-4436-903f-40990ae9c333 rows=1 changes={'report_to_aria': 'False'}
+2026-10-12 09:45:23,177 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=a8f65fbc-48d0-48bc-acc3-0ccb5f1f55e8 rows=1 changes={'category': 'Digital Album', 'report_to_aria': 'True'}
+2026-10-12 09:45:35,117 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=divyangikk02@gmail.com state=running
+2026-10-12 09:45:42,488 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=divyangikk02@gmail.com state=running
+2026-10-12 09:53:16,991 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com new_connection=True
+2026-10-12 09:53:38,061 [WARNING] crowdlink.audit: STORE_CONNECT_BLOCKED platform=SHOPIFY email=divyangikk02@gmail.com store=ita3-0.myshopify.com reason=already_connected owner_email=piyushdadhich5445@gmail.com owner_connection=8196b73d-ab8b-41a6-a8f0-a96a8420e9e4
+2026-10-12 09:53:46,921 [INFO] crowdlink.audit: STORE_DISCONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com
+2026-10-12 09:54:20,710 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=divyangikk02@gmail.com store=ita3-0.myshopify.com new_connection=True
+2026-10-12 10:34:55,715 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com new_connection=True
+2026-10-12 10:40:24,718 [WARNING] crowdlink.audit: STORE_CONNECT_BLOCKED platform=SHOPIFY email=divyangikk02@gmail.com store=ita3-0.myshopify.com reason=already_connected owner_email=piyushdadhich5445@gmail.com owner_connection=531911f3-a49d-40f9-81e8-f601685c7225
+2026-10-12 10:40:38,986 [INFO] crowdlink.audit: STORE_DISCONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com
+2026-10-12 10:41:14,379 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=divyangikk02@gmail.com store=ita3-0.myshopify.com new_connection=True
+2026-10-12 10:42:03,713 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=9bb1b032-33f9-40b1-b937-ec872fad669a rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 10:42:05,864 [INFO] crowdlink.audit: PRODUCT_UPDATE email=divyangikk02@gmail.com product=9bb1b032-33f9-40b1-b937-ec872fad669a rows=1 changes={'release_date': '2026-10-21', 'all_presales_loaded': 'False'}
+2026-10-12 11:06:12,781 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com new_connection=True
+2026-10-12 11:06:46,882 [INFO] crowdlink.audit: SUMMARY_UPDATE email=piyushdadhich5445@gmail.com summary=897bf39b-6266-47d0-bc47-c3fbfce88d5c date=2026-10-02 fields=['audience_size']
+2026-10-12 11:06:50,640 [INFO] crowdlink.audit: SUMMARY_UPDATE email=piyushdadhich5445@gmail.com summary=897bf39b-6266-47d0-bc47-c3fbfce88d5c date=2026-10-02 fields=['notes']
+2026-10-12 11:07:29,240 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=e131a619-6971-47b7-972d-18ba526e65f3 rows=1 changes={'category': 'Vinyl Album 1LP', 'report_to_aria': 'True'}
+2026-10-12 11:07:32,100 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=e131a619-6971-47b7-972d-18ba526e65f3 rows=1 changes={'release_date': '2026-10-14', 'all_presales_loaded': 'False'}
+2026-10-12 11:07:56,890 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=e131a619-6971-47b7-972d-18ba526e65f3 rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-12 11:08:10,070 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=e131a619-6971-47b7-972d-18ba526e65f3 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 11:08:16,816 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=e131a619-6971-47b7-972d-18ba526e65f3 rows=1 changes={'json_bundle': "[{'product_id': '2a36733e-ec77-40f2-8245-edcd2d5390c5', 'bundle_unitprice': 500.0}]"}
+2026-10-12 11:10:20,842 [INFO] crowdlink.audit: LOCATION_CREATE email=piyushdadhich5445@gmail.com location=347673e7-d4ad-4bfd-9293-dc0a21459f38 name=test store
+2026-10-12 11:10:39,557 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=bd0c38dd-0961-41bd-a12d-85d052fcbbda rows=1 changes={'category': 'CD Single', 'report_to_aria': 'True'}
+2026-10-12 11:10:45,544 [INFO] crowdlink.audit: PRODUCT_UPDATE email=piyushdadhich5445@gmail.com product=bd0c38dd-0961-41bd-a12d-85d052fcbbda rows=1 changes={'release_date': '2026-10-29', 'all_presales_loaded': 'False'}
+2026-10-12 11:11:13,746 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=piyushdadhich5445@gmail.com state=running
+2026-10-12 11:11:34,335 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=piyushdadhich5445@gmail.com state=running
+2026-10-12 11:37:36,090 [INFO] crowdlink.audit: STORE_CONNECT platform=SQUARE email=soham.m@edreamz.in store=ML4RHP0N1HDQB new_connection=True
+2026-10-12 11:37:51,104 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=510d10a0-ed3a-478f-856f-adc974ba5b7b rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-12 11:37:58,644 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=510d10a0-ed3a-478f-856f-adc974ba5b7b rows=1 changes={'json_bundle': "[{'product_id': '39f84d39-1ff0-4b01-8221-c08144f28ff8', 'bundle_unitprice': 1.0}]"}
+2026-10-12 11:38:03,434 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=510d10a0-ed3a-478f-856f-adc974ba5b7b rows=1 changes={'category': 'Vinyl Single', 'report_to_aria': 'True'}
+2026-10-12 11:38:31,899 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running
+2026-10-12 11:54:16,999 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=152.59.63.107 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36'
+2026-10-12 11:54:17,114 [WARNING] crowdlink.audit: MIGRATE_DB_DONE
+2026-10-12 11:56:28,454 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running
+2026-10-12 12:05:25,308 [INFO] crowdlink.audit: STORE_DISCONNECT platform=SQUARE email=soham.m@edreamz.in store=ML4RHP0N1HDQB
+2026-10-12 12:06:53,702 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=soham.m@edreamz.in store=replicat-staging.myshopify.com new_connection=True
+2026-10-12 12:11:50,909 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=piyushdadhich5445@gmail.com state=running
+2026-10-12 12:29:00,329 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com new_connection=True
+2026-10-12 12:32:58,415 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=soham.m@edreamz.in store=replicat-staging.myshopify.com new_connection=True
+2026-10-12 12:34:08,229 [INFO] crowdlink.audit: LOCATION_CREATE email=soham.m@edreamz.in location=28f04e8b-6192-4c07-8993-cc05e54bef20 name=testing
+2026-10-12 15:42:38,135 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=app.tester117@shopify.com store=1n14e1-sy.myshopify.com new_connection=True
+2026-10-13 05:23:01,659 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=4577b83d-bda4-48dd-b518-61a2d2d198d0 rows=1 changes={'category': 'Define Bundle', 'report_to_aria': 'False'}
+2026-10-13 05:23:06,593 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=4577b83d-bda4-48dd-b518-61a2d2d198d0 rows=1 changes={'category': 'None', 'report_to_aria': 'False'}
+2026-10-13 05:23:29,745 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=4577b83d-bda4-48dd-b518-61a2d2d198d0 rows=1 changes={'category': 'CD Album', 'report_to_aria': 'True'}
+2026-10-13 05:23:33,857 [INFO] crowdlink.audit: PRODUCT_UPDATE email=soham.m@edreamz.in product=4577b83d-bda4-48dd-b518-61a2d2d198d0 rows=1 changes={'release_date': '2026-10-14', 'all_presales_loaded': 'False'}
+2026-10-13 05:23:45,622 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running
+2026-10-13 05:29:36,748 [INFO] crowdlink.audit: STORE_DISCONNECT platform=SHOPIFY email=soham.m@edreamz.in store=replicat-staging.myshopify.com
+2026-10-13 05:30:50,910 [INFO] crowdlink.audit: STORE_CONNECT platform=SQUARE email=soham.m@edreamz.in store=ML4RHP0N1HDQB new_connection=True
+2026-10-13 05:31:32,140 [INFO] crowdlink.audit: STORE_DISCONNECT platform=SQUARE email=soham.m@edreamz.in store=ML4RHP0N1HDQB
+2026-10-13 06:51:03,348 [INFO] crowdlink.audit: STORE_CONNECT platform=SQUARE email=soham.m@edreamz.in store=ML4RHP0N1HDQB new_connection=False
+2026-10-13 06:51:11,006 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:51:19,479 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:56:07,075 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:56:11,957 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:56:17,152 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running
+2026-10-13 06:57:22,927 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running
+2026-10-13 06:58:59,444 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:59:03,474 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:59:07,196 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:59:08,773 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:59:24,828 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:59:37,756 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 06:59:42,727 [ERROR] django.request: Internal Server Error: /api/sales/
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 529, in get
+    for line in build_summary_groups(connections):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/utils/post_sync.py", line 304, in build_summary_groups
+    .order_by("-sale_date")
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1326, in _fetch_all
+    self._prefetch_related_objects()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 813, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1734, in prefetch_related_objects
+    level,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1855, in prefetch_one_level
+    prefetcher.get_prefetch_queryset(instances, lookup.get_current_queryset(level)))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 637, in get_prefetch_queryset
+    for rel_obj in queryset:
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'core_api_saledetail.sku_or_barcode' in 'SELECT'")
+2026-10-13 07:10:47,736 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=106.219.134.182 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36'
+2026-10-13 07:10:47,811 [ERROR] crowdlink.audit: MIGRATE_DB_FAILED
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 1041, in run_migrations
+    call_command('migrate', interactive=False, stdout=out)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 181, in call_command
+    return command.execute(*args, **defaults)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 89, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/commands/migrate.py", line 246, in handle
+    fake_initial=fake_initial,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 117, in migrate
+    state = self._migrate_all_forwards(state, plan, full_plan, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 147, in _migrate_all_forwards
+    state = self.apply_migration(state, migration, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 227, in apply_migration
+    state = migration.apply(state, schema_editor)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/migration.py", line 126, in apply
+    operation.database_forwards(self.app_label, schema_editor, old_state, project_state)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/operations/fields.py", line 170, in database_forwards
+    schema_editor.remove_field(from_model, from_model._meta.get_field(self.name))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 559, in remove_field
+    self.execute(sql)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 145, in execute
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+2026-10-13 07:15:11,734 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=106.219.134.182 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36'
+2026-10-13 07:15:11,805 [ERROR] crowdlink.audit: MIGRATE_DB_FAILED
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 1041, in run_migrations
+    call_command('migrate', interactive=False, stdout=out)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 181, in call_command
+    return command.execute(*args, **defaults)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 89, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/commands/migrate.py", line 246, in handle
+    fake_initial=fake_initial,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 117, in migrate
+    state = self._migrate_all_forwards(state, plan, full_plan, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 147, in _migrate_all_forwards
+    state = self.apply_migration(state, migration, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 227, in apply_migration
+    state = migration.apply(state, schema_editor)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/migration.py", line 126, in apply
+    operation.database_forwards(self.app_label, schema_editor, old_state, project_state)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/operations/fields.py", line 170, in database_forwards
+    schema_editor.remove_field(from_model, from_model._meta.get_field(self.name))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 559, in remove_field
+    self.execute(sql)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 145, in execute
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+2026-10-13 07:15:16,807 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=106.219.134.182 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36'
+2026-10-13 07:15:16,875 [ERROR] crowdlink.audit: MIGRATE_DB_FAILED
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 1041, in run_migrations
+    call_command('migrate', interactive=False, stdout=out)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 181, in call_command
+    return command.execute(*args, **defaults)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 89, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/commands/migrate.py", line 246, in handle
+    fake_initial=fake_initial,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 117, in migrate
+    state = self._migrate_all_forwards(state, plan, full_plan, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 147, in _migrate_all_forwards
+    state = self.apply_migration(state, migration, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 227, in apply_migration
+    state = migration.apply(state, schema_editor)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/migration.py", line 126, in apply
+    operation.database_forwards(self.app_label, schema_editor, old_state, project_state)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/operations/fields.py", line 170, in database_forwards
+    schema_editor.remove_field(from_model, from_model._meta.get_field(self.name))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 559, in remove_field
+    self.execute(sql)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 145, in execute
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+2026-10-13 07:15:18,314 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=106.219.134.182 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36'
+2026-10-13 07:15:18,382 [ERROR] crowdlink.audit: MIGRATE_DB_FAILED
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 1041, in run_migrations
+    call_command('migrate', interactive=False, stdout=out)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 181, in call_command
+    return command.execute(*args, **defaults)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 89, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/commands/migrate.py", line 246, in handle
+    fake_initial=fake_initial,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 117, in migrate
+    state = self._migrate_all_forwards(state, plan, full_plan, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 147, in _migrate_all_forwards
+    state = self.apply_migration(state, migration, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 227, in apply_migration
+    state = migration.apply(state, schema_editor)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/migration.py", line 126, in apply
+    operation.database_forwards(self.app_label, schema_editor, old_state, project_state)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/operations/fields.py", line 170, in database_forwards
+    schema_editor.remove_field(from_model, from_model._meta.get_field(self.name))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 559, in remove_field
+    self.execute(sql)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 145, in execute
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+2026-10-13 07:15:23,943 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=106.219.134.182 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36'
+2026-10-13 07:15:24,012 [ERROR] crowdlink.audit: MIGRATE_DB_FAILED
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 1041, in run_migrations
+    call_command('migrate', interactive=False, stdout=out)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 181, in call_command
+    return command.execute(*args, **defaults)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 89, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/commands/migrate.py", line 246, in handle
+    fake_initial=fake_initial,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 117, in migrate
+    state = self._migrate_all_forwards(state, plan, full_plan, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 147, in _migrate_all_forwards
+    state = self.apply_migration(state, migration, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 227, in apply_migration
+    state = migration.apply(state, schema_editor)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/migration.py", line 126, in apply
+    operation.database_forwards(self.app_label, schema_editor, old_state, project_state)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/operations/fields.py", line 170, in database_forwards
+    schema_editor.remove_field(from_model, from_model._meta.get_field(self.name))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 559, in remove_field
+    self.execute(sql)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 145, in execute
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+2026-10-13 07:17:22,546 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=piyushdadhich5445@gmail.com state=running
+2026-10-13 07:17:36,936 [INFO] crowdlink.audit: STORE_DISCONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com
+2026-10-13 07:19:48,775 [INFO] crowdlink.audit: STORE_CONNECT platform=SHOPIFY email=piyushdadhich5445@gmail.com store=ita3-0.myshopify.com new_connection=False
+2026-10-13 07:19:49,844 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=106.219.134.182 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36'
+2026-10-13 07:19:49,910 [ERROR] crowdlink.audit: MIGRATE_DB_FAILED
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 1041, in run_migrations
+    call_command('migrate', interactive=False, stdout=out)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 181, in call_command
+    return command.execute(*args, **defaults)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 89, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/commands/migrate.py", line 246, in handle
+    fake_initial=fake_initial,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 117, in migrate
+    state = self._migrate_all_forwards(state, plan, full_plan, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 147, in _migrate_all_forwards
+    state = self.apply_migration(state, migration, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 227, in apply_migration
+    state = migration.apply(state, schema_editor)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/migration.py", line 126, in apply
+    operation.database_forwards(self.app_label, schema_editor, old_state, project_state)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/operations/fields.py", line 170, in database_forwards
+    schema_editor.remove_field(from_model, from_model._meta.get_field(self.name))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 559, in remove_field
+    self.execute(sql)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 145, in execute
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+2026-10-13 07:19:58,906 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=piyushdadhich5445@gmail.com state=running
+2026-10-13 07:20:28,266 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running
+2026-10-13 07:32:31,551 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=106.219.134.182 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36'
+2026-10-13 07:32:31,623 [ERROR] crowdlink.audit: MIGRATE_DB_FAILED
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/appcrowdmerch746/public_html/api.app.crowdmerch.com.au/crowdlink_app/core_api/views.py", line 1041, in run_migrations
+    call_command('migrate', interactive=False, stdout=out)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/__init__.py", line 181, in call_command
+    return command.execute(*args, **defaults)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/base.py", line 89, in wrapped
+    res = handle_func(*args, **kwargs)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/core/management/commands/migrate.py", line 246, in handle
+    fake_initial=fake_initial,
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 117, in migrate
+    state = self._migrate_all_forwards(state, plan, full_plan, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 147, in _migrate_all_forwards
+    state = self.apply_migration(state, migration, fake=fake, fake_initial=fake_initial)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/executor.py", line 227, in apply_migration
+    state = migration.apply(state, schema_editor)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/migration.py", line 126, in apply
+    operation.database_forwards(self.app_label, schema_editor, old_state, project_state)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/migrations/operations/fields.py", line 170, in database_forwards
+    schema_editor.remove_field(from_model, from_model._meta.get_field(self.name))
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 559, in remove_field
+    self.execute(sql)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/base/schema.py", line 145, in execute
+    cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/appcrowdmerch746/.local/lib/python3.6/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1091, "Can't DROP COLUMN `sku_or_barcode`; check that it exists")
+2026-10-13 07:35:20,158 [WARNING] crowdlink.audit: MIGRATE_DB_CALLED ip=106.219.134.182 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36'
+2026-10-13 07:35:20,269 [WARNING] crowdlink.audit: MIGRATE_DB_DONE
+2026-10-13 09:11:03,434 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running
+2026-10-13 12:10:04,689 [INFO] crowdlink.audit: MANUAL_SYNC_REQUEST email=soham.m@edreamz.in state=running

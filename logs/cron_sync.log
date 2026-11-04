@@ -1,0 +1,154 @@
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://ita3-0.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A40%3A01.803901%2B00%3A00'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://ita3-0.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A40%3A17.948080%2B00%3A00'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 403 Client Error: Forbidden for url: https://demoedz.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A40%3A34.040782%2B00%3A00'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A41%3A21.992542%2B00%3A00'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://ita3-0.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A41%3A38.150548%2B00%3A00'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 403 Client Error: Forbidden for url: https://demoedz.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A41%3A54.310648%2B00%3A00'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://ita3-0.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A45%3A01.526911%2B00%3A00'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://ita3-0.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A45%3A17.608942%2B00%3A00'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 403 Client Error: Forbidden for url: https://demoedz.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A45%3A33.685629%2B00%3A00'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A46%3A21.573474%2B00%3A00'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://ita3-0.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A46%3A37.638554%2B00%3A00'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 403 Client Error: Forbidden for url: https://demoedz.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-29T11%3A46%3A53.754981%2B00%3A00'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://ita3-0.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-30T06%3A00%3A02.542046%2B00%3A00'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://ita3-0.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-30T06%3A00%3A18.607035%2B00%3A00'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 403 Client Error: Forbidden for url: https://demoedz.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-30T06%3A00%3A35.039168%2B00%3A00'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-30T06%3A01%3A23.012496%2B00%3A00'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://ita3-0.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-30T06%3A01%3A39.161249%2B00%3A00'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify request failed after 4 attempts: 403 Client Error: Forbidden for url: https://demoedz.myshopify.com/admin/api/2026-07/orders.json?status=any&limit=250&created_at_min=2026-08-30T06%3A01%3A55.351606%2B00%3A00'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (403) for https://demoedz.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (403) for https://demoedz.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square request failed after 4 attempts: 401 Client Error: Unauthorized for url: https://connect.squareup.com/v2/locations'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+CommandError: 8 connection(s) failed - see logs/sync.log
+System check identified some issues:
+
+WARNINGS:
+core_api.StandardLocality: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	HINT: Configure the DEFAULT_AUTO_FIELD setting or the CoreApiConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+shopify@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+shopify@dreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+s7gamingandsports7@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+sudhir.s@edreamz.in - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+s7gamingandsports7@gmail.com - SQUARE: {'status': 'error', 'error': 'Square access has expired and could not be renewed - the store must reconnect Square (401 Client Error: Unauthorized for url: https://connect.squareup.com/oauth2/token)'}
+sudhir.s@edreamz.in - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://tiuazf-2e.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5445@gmail.com - SHOPIFY: {'status': 'error', 'error': 'Shopify rejected the access token (401) for https://ita3-0.myshopify.com/admin/api/2026-07/orders.json - the store must reconnect the app (reinstall / re-authorise).'}
+piyushiaf5869@gmail.com - SHOPIFY: {'status': 'error', 'error': 'no such column: core_api_product.webstore_creation_date'}
+CommandError: 8 connection(s) failed - see logs/sync.log
