@@ -45,8 +45,12 @@ def make_sale(conn, variant, oid, when, *, payment="CREDIT_CARD", channel="POS",
         actual_location=actual or location, sale_channel=channel, payment_type=payment,
         source_platform="Shopify")
     detail = SaleDetail.objects.create(
-        connection=conn, sale=sale, variant=variant, external_order_id=oid,
-        sku_or_barcode=variant.sku_or_barcode, sales_units=units)
+        connection=conn,
+        sale=sale,
+        variant=variant,
+        external_order_id=oid,
+        sales_units=units
+    )
     return sale, detail
 
 
@@ -102,6 +106,32 @@ class PresaleEngine(TestCase):
         self.assertEqual(Sale.objects.filter(external_order_id="9001").count(), 1)
         prod.refresh_from_db(); self.assertTrue(prod.all_presales_loaded)
 
+    def _run_old_presale(self, has_scope):
+        now = timezone.now()
+        conn = make_conn("SHOPIFY", last_sync_at=now - timedelta(days=1))
+        created = now - timedelta(days=100)
+        prod = make_product(conn, 1, release=client_today() + timedelta(days=3),
+                            webstore_created=created)
+        with mock.patch.object(shopify_sync, "has_read_all_orders", return_value=has_scope), \
+             mock.patch.object(shopify_sync, "fetch_orders", return_value=[]) as fo, \
+             mock.patch.object(shopify_sync, "fetch_locations", return_value=[]), \
+             mock.patch.object(shopify_sync, "fetch_products", return_value=iter([])), \
+             mock.patch.object(shopify_sync, "fetch_variants_by_gid", side_effect=lambda *a: iter([])):
+            res = run_connection_sync(conn)
+        self.assertEqual(res["status"], "success", res)
+        prod.refresh_from_db()
+        return prod, res
+
+    def test_history_beyond_60_days_loads_with_read_all_orders(self):
+        prod, res = self._run_old_presale(True)
+        self.assertTrue(prod.all_presales_loaded)
+        self.assertFalse(res["presale_history_capped"])
+
+    def test_history_beyond_60_days_stays_pending_without_scope(self):
+        prod, res = self._run_old_presale(False)
+        self.assertFalse(prod.all_presales_loaded)      # retried after the store reconnects
+        self.assertTrue(res["presale_history_capped"])
+
     def test_old_release_date_is_not_backfilled(self):
         now = timezone.now()
         conn = make_conn("SHOPIFY", last_sync_at=now - timedelta(days=1))
@@ -116,21 +146,34 @@ class PresaleEngine(TestCase):
 
 
 # ---------------------------------------------------------------- sync 5
-class PostSyncIdentifiers(TestCase):          # 5.1 / 5.2
+class PostSyncIdentifiers(TestCase):
+
     def test_identifier_from_variants_and_missing_flag(self):
         conn = make_conn("SHOPIFY")
-        a = make_product(conn, 1); b = make_product(conn, 2); c = make_product(conn, 3)
+        a = make_product(conn, 1)
+        b = make_product(conn, 2)
+        c = make_product(conn, 3)
         make_variant(conn, a, "MISSING-SHOPIFY-x", missing=True, n="a1")
         make_variant(conn, a, "REAL-1", n="a2")
         make_variant(conn, b, "MISSING-SHOPIFY-y", missing=True, n="b1")
-        b.sku_or_barcode, b.has_missing_identifier = "MISSING-SHOPIFY-y", False   # stale
+        b.combined_sku_bar = "STALE"
+        b.has_missing_identifier = False
         b.save()
-        c.sku_or_barcode = "KEEP"; c.save()                                        # no variants
+        c.combined_sku_bar = "KEEP"
+        c.save()
         refresh_after_sync(conn)
-        a.refresh_from_db(); b.refresh_from_db(); c.refresh_from_db()
-        self.assertEqual((a.sku_or_barcode, a.has_missing_identifier), ("REAL-1", False))
-        self.assertEqual((b.sku_or_barcode, b.has_missing_identifier), (None, True))
-        self.assertEqual((c.sku_or_barcode, c.has_missing_identifier), ("KEEP", False))
+        a.refresh_from_db()
+        b.refresh_from_db()
+        c.refresh_from_db()
+        self.assertEqual(
+            (a.combined_sku_bar, a.has_missing_identifier),
+            ("REAL-1", False)
+        )
+        self.assertEqual(
+            (b.combined_sku_bar, b.has_missing_identifier),
+            (None, True)
+        )
+        self.assertEqual(c.combined_sku_bar, "KEEP")
 
 
 class PostSyncLocations(TestCase):            # 5.3

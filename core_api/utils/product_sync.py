@@ -14,27 +14,45 @@ making the protection structural rather than relying on every sync author
 remembering to omit them.
 """
 
+from decimal import Decimal, ROUND_HALF_UP
+
+from django.db import transaction
+from django.db.models import Min
+
 from core_api.models import Product, Variant
 
 # Fields that belong to CrowdLink and must survive every sync unchanged.
 _CROWDLINK_OWNED_FIELDS = frozenset({"category", "release_date", "report_to_aria", "json_bundle"})
 
 
+def to_price(value):
+    """Platform price -> Decimal(2dp), or None when missing / not a number."""
+    if value is None or value == "":
+        return None
+    try:
+        return Decimal(str(value)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    except Exception:
+        return None
+
+
 def sync_upsert_product(connection, sku_or_barcode, defaults):
     """
     Create or update a parent Product row and its child Variant row from platform sync data.
-    Ensures 1 row per parent product in Product, and 1 row per SKU/barcode in Variant.
+    Ensures 1 row per parent product in Product, and 1 row per platform variant id in Variant
+    (several variants/products may share a SKU/barcode - see core_api/utils/barcodes.py).
     """
     safe_defaults = {k: v for k, v in defaults.items() if k not in _CROWDLINK_OWNED_FIELDS}
 
     external_product_id = safe_defaults.get("external_product_id") or sku_or_barcode
-    external_catalog_id = safe_defaults.get("external_catalog_id")
+    external_catalog_id = safe_defaults.get("external_catalog_id") or None   # never ''
     has_missing_identifier = safe_defaults.get("has_missing_identifier", False)
     title = safe_defaults.get("title", "Unknown Product")
     image_url = safe_defaults.get("image_url")
     channel = safe_defaults.get("channel", "POS")
     webstore_creation_date = safe_defaults.get("webstore_creation_date")
     variant_title = safe_defaults.get("variant_title") or title
+    # Ex-tax price. None = the platform gave no usable price: keep what we already hold.
+    price = to_price(safe_defaults.get("price"))
 
     # Placeholder identifiers (MISSING-...) exist only as the Variant unique key.
     # They must never be shown on / stored in Product.sku_or_barcode (null instead).
@@ -53,7 +71,7 @@ def sync_upsert_product(connection, sku_or_barcode, defaults):
         defaults=product_defaults,
     )
 
-    # 2. Upsert Child Variant(1 row per sku_or_barcode, linked to parent Product).
+    # 2. Upsert Child Variant (1 row per platform variant id, linked to parent Product).
     # Variants with no real identifier store sku_or_barcode = NULL and are matched
     # by their platform id (external_catalog_id) instead of a MISSING-* placeholder.
     variant_fields = {
@@ -64,37 +82,60 @@ def sync_upsert_product(connection, sku_or_barcode, defaults):
         "title": variant_title,
         "image_url": image_url,
     }
-    if has_missing_identifier:
+    if price is not None:
+        variant_fields["price"] = price
+    # The look-up-then-create below is NOT atomic. Shopify fires products/create
+    # and products/update back to back, and the daily / manual sync can overlap
+    # them, so two callers used to both find "no variant" and both insert one
+    # (a NULL sku does not trip the (connection, sku) unique key). Locking the
+    # parent Product row serialises every writer of that product's variants.
+    with transaction.atomic():
+        Product.objects.select_for_update().get(pk=product.pk)
+
+        # A variant is identified by its PLATFORM id only. Never by SKU/barcode: two
+        # products may share a barcode and each must keep its own variant and sales
+        # (matching on the barcode used to hand one product's variant to the other).
+        # One narrow exception: an old row that never got a platform id is adopted when
+        # it sits under this same parent product and carries this SKU.
         variant = None
         if external_catalog_id:
             variant = Variant.objects.filter(
-                connection=connection, external_catalog_id=external_catalog_id,
-                has_missing_identifier=True).first()
-        variant_fields["sku_or_barcode"] = None
-    else:
-        variant = Variant.objects.filter(connection=connection, sku_or_barcode=sku_or_barcode).first()
-        if variant is None and external_catalog_id:
-            # a previously identifier-less variant that has now been given a SKU/barcode
-            variant = Variant.objects.filter(
-                connection=connection, external_catalog_id=external_catalog_id,
-                has_missing_identifier=True).first()
-        variant_fields["sku_or_barcode"] = sku_or_barcode
-    if variant is None:
-        Variant.objects.create(connection=connection, **variant_fields)
-    else:
-        for k, v in variant_fields.items():
-            setattr(variant, k, v)
-        variant.save()
+                connection=connection, external_catalog_id=external_catalog_id).first()
+            if variant is None and not has_missing_identifier:
+                legacy = list(Variant.objects.filter(
+                    connection=connection, product=product, external_catalog_id__isnull=True,
+                    sku_or_barcode=sku_or_barcode)[:2])
+                variant = legacy[0] if len(legacy) == 1 else None
+        elif not has_missing_identifier:
+            # No platform id at all (not something Shopify/Square send): SKU, if unambiguous.
+            from core_api.utils.barcodes import unique_variant_by_sku
+            variant = unique_variant_by_sku(connection, sku_or_barcode)
+        # Variants with no real identifier store sku_or_barcode = NULL (matched by
+        # platform id above); everything else keeps its SKU/barcode.
+        variant_fields["sku_or_barcode"] = None if has_missing_identifier else sku_or_barcode
 
-    # 3. Product-level identifier = ALL real variant SKUs combined (placeholders
-    # excluded). Recomputed here so the webhook path (which does not run the
-    # post-sync refresh) stays correct; refresh_product_identifiers() applies
-    # the same rule after every full sync.
-    combined = combine_variant_skus(product.variants.all())
-    missing = combined is None
-    if product.combined_sku_bar != combined or product.has_missing_identifier != missing:
-        product.combined_sku_bar, product.has_missing_identifier = combined, missing
-        product.save(update_fields=["combined_sku_bar", "has_missing_identifier"])
+        if variant is None:
+            Variant.objects.create(connection=connection, **variant_fields)
+        else:
+            for k, v in variant_fields.items():
+                setattr(variant, k, v)
+            variant.save()
+
+        # Product price = lowest variant price (the same value for one-variant products)
+        low = product.variants.aggregate(low=Min("price"))["low"]
+        if low is not None and product.price != low:
+            product.price = low
+            product.save(update_fields=["price"])
+
+        # 3. Product-level identifier = ALL real variant SKUs combined (placeholders
+        # excluded). Recomputed here so the webhook path (which does not run the
+        # post-sync refresh) stays correct; refresh_product_identifiers() applies
+        # the same rule after every full sync.
+        combined = combine_variant_skus(product.variants.all())
+        missing = combined is None
+        if product.combined_sku_bar != combined or product.has_missing_identifier != missing:
+            product.combined_sku_bar, product.has_missing_identifier = combined, missing
+            product.save(update_fields=["combined_sku_bar", "has_missing_identifier"])
 
     return product, created
 
@@ -215,12 +256,20 @@ def upsert_location(connection, *, platform, external_id, name, address1, city,
     from core_api.models import SalesLocation, StandardLocality
 
     locid_match = std_lat = std_lng = None
+    fallback_formatted_address = ""
+    
     if city and postal_code:
         match = StandardLocality.objects.filter(
             suburb__iexact=city.strip(), postcode=postal_code.strip()
         ).first()
         if match:
             locid_match, std_lat, std_lng = match.locid, match.latitude, match.longitude
+            fallback_formatted_address = match.locality or ""
+
+    # No locality match: build "Suburb, STATE Postcode" from the platform fields
+    if not fallback_formatted_address:
+        from core_api.utils.post_sync import build_formatted_address
+        fallback_formatted_address = build_formatted_address(city, province, postal_code, address1)
 
     final_lat = Decimal(str(lat)) if lat is not None else std_lat
     final_lng = Decimal(str(lng)) if lng is not None else std_lng
@@ -232,15 +281,23 @@ def upsert_location(connection, *, platform, external_id, name, address1, city,
         SalesLocation.objects.create(
             connection=connection, external_location_id=str(external_id),
             platform=platform, name=name or "Unknown Location",
+            formatted_address=fallback_formatted_address,
             address1=address1 or "", city=city or "", province=province or "",
             postal_code=postal_code or "", country=country or "",
             latitude=final_lat, longitude=final_lng, locid=locid_match,
             is_active=is_active,
         )
         return "created"
+    # Only refresh is_active, plus formatted_address if it was never populated
+    update_fields = []
     if existing.is_active != is_active:
         existing.is_active = is_active
-        existing.save(update_fields=["is_active"])
+        update_fields.append("is_active")
+    if not existing.formatted_address and fallback_formatted_address:
+        existing.formatted_address = fallback_formatted_address
+        update_fields.append("formatted_address")
+    if update_fields:
+        existing.save(update_fields=update_fields)
         return "updated"
     return "unchanged"
 
@@ -297,12 +354,34 @@ def run_connection_sync(connection, force_initial=False, refresh=False):
             mode, since = MODE_REFRESH, connection.created_at
         else:
             mode, since = MODE_INCREMENTAL, connection.last_sync_at - WATERMARK_OVERLAP
+        # Manual refresh only: if any variant still has no price, re-read the
+        # whole catalogue (not just items changed since created_at) so prices
+        # backfill. Orders keep their normal window. Variable-price items stay
+        # NULL, which only costs a full catalogue read on a manual sync.
+        connection._catalog_since = None
+        # Same for a product with no variant row at all: before variants were keyed by
+        # platform id, a product sharing a barcode lost its variant to the other product.
+        # The full read recreates it (and is a no-op for healthy catalogues).
+        if mode == MODE_REFRESH and (
+                Variant.objects.filter(connection=connection, price__isnull=True).exists()
+                or Product.objects.filter(connection=connection, variants__isnull=True).exists()):
+            from datetime import datetime, timezone as _tz
+            connection._catalog_since = datetime(2000, 1, 1, tzinfo=_tz.utc)
         logger.info(f"[SYNC] START {connection} mode={mode} since={since}")
 
         stats = _engine_for(connection).run_sync(connection, mode, since, started_at)
         # Item 5 - runs for EVERY sync type; a failure here leaves last_sync_at
         # untouched so the same window is retried.
         stats["post_sync"] = refresh_after_sync(connection)
+
+        if connection.is_active:
+            try:
+                from core_api.utils.connection_guard import absorb_previous_owners
+                absorbed = absorb_previous_owners(connection)
+                if absorbed:
+                    stats["absorbed_previous_owners"] = absorbed
+            except Exception:
+                logger.exception(f"[SYNC] absorb_previous_owners failed for {connection}")
 
         connection.last_sync_at = started_at
         connection.save(update_fields=["last_sync_at"])

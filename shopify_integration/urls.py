@@ -10,6 +10,7 @@ from .views import (
     ShopifyCustomerDataRequestView,
     ShopifyCustomerRedactView,
     ShopifyShopRedactView,
+    ShopifyAppUninstalledView,
 )
 
 # NOTE: every Shopify-delivered webhook below is registered TWICE — with
@@ -39,8 +40,12 @@ urlpatterns = [
     path('webhooks/customers/data_request', ShopifyCustomerDataRequestView.as_view(), name='shopify_webhook_customer_data_request_noslash'),
     path('webhooks/customers/redact/', ShopifyCustomerRedactView.as_view(), name='shopify_webhook_customer_redact'),
     path('webhooks/customers/redact', ShopifyCustomerRedactView.as_view(), name='shopify_webhook_customer_redact_noslash'),
+    path('webhooks/app/uninstalled/', ShopifyAppUninstalledView.as_view(), name='shopify_webhook_app_uninstalled'),
+    path('webhooks/app/uninstalled', ShopifyAppUninstalledView.as_view(), name='shopify_webhook_app_uninstalled_noslash'),
+
     path('webhooks/shop/redact/', ShopifyShopRedactView.as_view(), name='shopify_webhook_shop_redact'),
     path('webhooks/shop/redact', ShopifyShopRedactView.as_view(), name='shopify_webhook_shop_redact_noslash'),
+
 
     path('synced-products/', ProductsView.as_view(), name='synced_products'),
     path('disconnect/', disconnect_shopify, name='disconnect_shopify'),

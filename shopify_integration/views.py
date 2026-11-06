@@ -44,9 +44,10 @@ def is_valid_return_url(url):
 
 from core_api.models import ClientStoreConnection, Sale, Product, SalesLocation
 from .services.shopify_oauth import get_shopify_auth_url, exchange_code_for_token
-from .services.shopify_catalog import process_orders as _process_shopify_orders
+from .services.shopify_catalog import process_orders as _process_shopify_orders, variant_price_ex_tax
 from core_api.utils.aria import get_current_aria_week_start
 from core_api.utils.product_sync import sync_upsert_product, run_connection_sync
+from core_api.utils.barcodes import duplicate_barcode_info, duplicate_barcode_fields
 
 class ShopifyConnectView(View):
     def get(self, request):
@@ -54,8 +55,13 @@ class ShopifyConnectView(View):
         email = request.GET.get('email')
         return_url = request.GET.get('return_url')
 
+        import re
+
         if not shop or not email:
             return JsonResponse({"error": "shop and email query parameters are required"}, status=400)
+
+        if not re.match(r'^[a-z0-9][a-z0-9\-]*\.myshopify\.com$', shop):
+            return JsonResponse({"error": "Invalid shop domain format"}, status=400)
 
         if return_url and not is_valid_return_url(return_url):
             logger.warning(f"Blocked invalid return_url in ShopifyConnectView: {return_url}")
@@ -63,14 +69,18 @@ class ShopifyConnectView(View):
 
         state_token = secrets.token_urlsafe(32)
 
-        cache_data = {"email": email, "return_url": return_url}
+        cache_data = {"email": email, "return_url": return_url, "shop": shop}
         cache.set(f"oauth_state_{state_token}", cache_data, timeout=600)
 
         client_id = getattr(settings, 'SHOPIFY_CLIENT_ID', os.environ.get('SHOPIFY_CLIENT_ID', ''))
         redirect_uri = getattr(settings, 'SHOPIFY_REDIRECT_URI', os.environ.get('SHOPIFY_REDIRECT_URI', 'http://localhost:8000/api/shopify/callback/'))
 
         # Match the scopes exactly with your shopify.app.toml
-        scopes = "write_products,read_products,read_inventory,read_orders,customer_read_customers"
+        scopes = "read_products,read_inventory,read_orders,customer_read_customers"
+        # read_all_orders must be approved in the Partner Dashboard AND in the released app
+        # version first, otherwise Shopify rejects every install. Off until .env sets it to 1.
+        if os.environ.get("SHOPIFY_REQUEST_READ_ALL_ORDERS") == "1":
+            scopes += ",read_all_orders"
 
         auth_url = f"https://{shop}/admin/oauth/authorize?client_id={client_id}&scope={scopes}&redirect_uri={redirect_uri}&state={state_token}"
 
@@ -78,6 +88,7 @@ class ShopifyConnectView(View):
 
 class ShopifyCallbackView(View):
     def get(self, request):
+        import re
         shop = request.GET.get('shop')
         code = request.GET.get('code')
         state_token = request.GET.get('state')
@@ -85,10 +96,26 @@ class ShopifyCallbackView(View):
         if not shop or not code or not state_token:
             return JsonResponse({"error": "shop, code, and state are required"}, status=400)
 
+        if not re.match(r'^[a-z0-9][a-z0-9\-]*\.myshopify\.com$', shop):
+            return JsonResponse({"error": "Invalid shop domain"}, status=400)
+
+        query_dict = request.GET.dict()
+        received_hmac = query_dict.pop('hmac', '')
+        query_dict.pop('signature', None)
+        msg = '&'.join(f"{k}={query_dict[k]}" for k in sorted(query_dict))
+        secret = getattr(settings, 'SHOPIFY_CLIENT_SECRET', os.environ.get('SHOPIFY_CLIENT_SECRET', '')).encode('utf-8')
+        calculated_hmac = hmac.new(secret, msg.encode('utf-8'), hashlib.sha256).hexdigest()
+        
+        if not hmac.compare_digest(calculated_hmac, received_hmac):
+            return JsonResponse({"error": "Invalid HMAC signature in callback"}, status=403)
+
         state_data = cache.get(f"oauth_state_{state_token}")
 
         if not state_data or not isinstance(state_data, dict):
             return JsonResponse({"error": "Invalid, expired, or missing state token (CSRF attempt)"}, status=403)
+
+        if state_data.get("shop") != shop:
+            return JsonResponse({"error": "OAuth state token does not match the requesting shop"}, status=403)
 
         email = state_data.get("email")
         return_url = state_data.get("return_url")
@@ -117,17 +144,43 @@ class ShopifyCallbackView(View):
         expires_in = token_data.get("expires_in")
         token_expires_at = timezone.now() + timedelta(seconds=expires_in) if expires_in else None
 
-        connection, created = ClientStoreConnection.objects.update_or_create(
-            client_email=email,
-            platform='SHOPIFY',
-            store_identifier=shop,
-            defaults={
-                'access_token': access_token,
-                'refresh_token': refresh_token,
-                'token_expires_at': token_expires_at,
-                'is_active': True
-            }
-        )
+        from core_api.utils.connection_guard import find_existing_connection
+        connection = find_existing_connection('SHOPIFY', shop, email)
+        created = False
+
+        if connection:
+            connection.client_email = email
+            connection.access_token = access_token
+            connection.refresh_token = refresh_token
+            connection.token_expires_at = token_expires_at
+            connection.is_active = True
+            connection.save(update_fields=['client_email', 'access_token', 'refresh_token', 'token_expires_at', 'is_active'])
+        else:
+            connection = ClientStoreConnection.objects.create(
+                client_email=email,
+                platform='SHOPIFY',
+                store_identifier=shop,
+                access_token=access_token,
+                refresh_token=refresh_token,
+                token_expires_at=token_expires_at,
+                is_active=True
+            )
+            created = True
+
+        if not created:
+            # Reconnect (possibly with the new read_all_orders scope): reload presale
+            # history for products still inside the presale window.
+            try:
+                from core_api.models import Product
+                from core_api.utils.product_sync import PRESALE_LOOKBACK_DAYS
+                from core_api.utils.post_sync import client_today
+                Product.objects.filter(
+                    connection=connection, release_date__isnull=False,
+                    release_date__gte=client_today() - timedelta(days=PRESALE_LOOKBACK_DAYS),
+                ).update(all_presales_loaded=False)
+            except Exception:
+                logger.exception("[SYNC] could not reset presale flags on reconnect")
+
         audit.info("STORE_CONNECT platform=%s email=%s store=%s new_connection=%s",
                    'SHOPIFY', email, connection.store_identifier, created)
 
@@ -136,8 +189,6 @@ class ShopifyCallbackView(View):
                 result = run_connection_sync(connection)
                 if result.get('status') == 'error':
                     raise RuntimeError(result.get('error'))
-                from core_api.utils.connection_guard import absorb_previous_owners
-                absorb_previous_owners(connection)
             except Exception:
                 error_detail = traceback.format_exc()
                 logger.error("[SYNC] first sync after connect FAILED for %s - %s:\n%s",
@@ -198,14 +249,10 @@ def _log_compliance_webhook_error(topic):
 
 
 def verify_shopify_webhook_hmac(request):
-    """Returns True if the request's HMAC header is valid (or DEBUG mock mode).
+    """Returns True only if the request's HMAC header is valid.
     Fails closed (returns False) on any unexpected error, so callers always
     get a clean 401 instead of a 500."""
     try:
-        mock_mode = settings.DEBUG and request.GET.get('mock', '').lower() == 'true'
-        if mock_mode:
-            return True
-
         hmac_header = request.headers.get('X-Shopify-Hmac-Sha256')
         if not hmac_header:
             return False
@@ -239,7 +286,6 @@ class ShopifyOrderWebhookView(View):
     shape process_orders() already expects from orders.json.
     """
     def post(self, request):
-        mock_mode = settings.DEBUG and request.GET.get('mock', '').lower() == 'true'
         if not verify_shopify_webhook_hmac(request):
             return JsonResponse({"error": "Missing or invalid HMAC signature"}, status=401)
 
@@ -251,21 +297,12 @@ class ShopifyOrderWebhookView(View):
         shop_domain = request.headers.get('X-Shopify-Shop-Domain', '')
         connection = ClientStoreConnection.objects.filter(store_identifier=shop_domain, platform='SHOPIFY').first()
 
-        if mock_mode and not connection:
-            connection = ClientStoreConnection.objects.filter(platform='SHOPIFY').first()
-
         if not connection:
             return JsonResponse({"error": "Store connection not found"}, status=404)
 
-        try:
-            saved, skipped = _process_shopify_orders(connection, [payload], timezone.now())
-        except Exception:
-            _log_compliance_webhook_error("orders webhook")
-            # Acknowledge anyway — Shopify retries a non-2xx indefinitely, and
-            # we've already logged the failure above for follow-up.
-            return JsonResponse({"status": "received", "error": "processing failed, logged"}, status=200)
-
-        return JsonResponse({"status": "success", "synced_transactions": saved, "skipped": skipped})
+        # Real-time processing disabled (CLXL03). Daily/manual sync handles all orders safely.
+        # Acknowledge the webhook with 200 OK so Shopify stops retrying it.
+        return JsonResponse({"status": "success", "message": "Real-time processing disabled", "synced_transactions": 0, "skipped": 1})
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -319,6 +356,7 @@ class ShopifyProductWebhookView(View):
                         "has_missing_identifier": has_missing_identifier,
                         "external_catalog_id": f"gid://shopify/ProductVariant/{variant_id}",
                         "external_product_id": product_gid or sku_or_barcode,
+                        "price": variant_price_ex_tax(connection, variant.get('price'), variant.get('taxable')),
                     }
                 )
                 synced_count += 1
@@ -372,6 +410,34 @@ class ShopifyCustomerRedactView(View):
 
 
 @method_decorator(csrf_exempt, name='dispatch')
+class ShopifyAppUninstalledView(View):
+    """app/uninstalled webhook. The store removed the app, so every token we hold for it
+    is dead. Deactivate (not delete) the connection - same as a manual disconnect - so the
+    UI shows it as disconnected and the nightly sync stops trying. History is kept; only
+    the shop/redact webhook erases data. A fresh install re-activates the row in
+    ShopifyCallbackView."""
+    def post(self, request):
+        if not verify_shopify_webhook_hmac(request):
+            return JsonResponse({"error": "Invalid HMAC signature"}, status=401)
+        try:
+            shop_domain = (request.headers.get('X-Shopify-Shop-Domain') or '').strip().lower()
+            if not shop_domain:
+                try:
+                    shop_domain = (json.loads(request.body).get('myshopify_domain') or '').strip().lower()
+                except ValueError:
+                    shop_domain = ''
+            if shop_domain:
+                n = ClientStoreConnection.objects.filter(
+                    store_identifier=shop_domain, platform='SHOPIFY', is_active=True
+                ).update(is_active=False)
+                audit.info("STORE_UNINSTALLED platform=SHOPIFY store=%s deactivated=%s", shop_domain, n)
+        except Exception:
+            logger.exception("[Webhook] app/uninstalled handling failed")
+        # Always 200 once the signature is valid, so Shopify does not keep retrying.
+        return JsonResponse({"status": "received"}, status=200)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
 class ShopifyShopRedactView(View):
     """Mandatory GDPR webhook: shop/redact. Unlike the in-app "Disconnect"
     button (which only flips is_active=False so the merchant can reconnect),
@@ -392,6 +458,9 @@ class ShopifyShopRedactView(View):
 
             connections = ClientStoreConnection.objects.filter(store_identifier=shop_domain, platform='SHOPIFY')
             for connection in connections:
+                if connection.is_active:
+                    logger.info(f"[GDPR] shop/redact skipped for {shop_domain} because connection was reactivated.")
+                    continue
                 Sale.objects.filter(connection=connection).delete()
                 Product.objects.filter(connection=connection).delete()
                 SalesLocation.objects.filter(connection=connection).delete()
@@ -420,7 +489,9 @@ class ProductsView(View):
         if not connection:
             return JsonResponse({"products": []})
 
-        products = Product.objects.filter(connection=connection).order_by('-id')
+        products = (Product.objects.filter(connection=connection)
+                    .prefetch_related('variants').order_by('-id'))
+        duplicates = duplicate_barcode_info(connection)
 
         data = []
         for p in products:
@@ -432,7 +503,9 @@ class ProductsView(View):
                 "id": str(p.id),
                 "title": p.title,
                 "combined_sku_bar": p.combined_sku_bar,
+                "price": str(p.price) if p.price is not None else None,
                 "has_missing_identifier": p.has_missing_identifier,
+                **duplicate_barcode_fields(duplicates, p),
                 "release_date": p.release_date.isoformat() if p.release_date else None,
                 "report_to_aria": p.report_to_aria,
                 "image_url": p.image_url,
@@ -441,12 +514,24 @@ class ProductsView(View):
                 "category": p.category,
                 "json_bundle": p.json_bundle,
                 "external_product_id": p.external_product_id,
+                "variants": [
+                    {
+                        "id": str(v.id),
+                        "title": v.title,
+                        "sku_or_barcode": v.sku_or_barcode,
+                        "price": str(v.price) if v.price is not None else None,
+                    }
+                    for v in p.variants.all()
+                ],
             })
 
         return JsonResponse({"products": data})
 
 
+from django.contrib.admin.views.decorators import staff_member_required
+
 @csrf_exempt
+@staff_member_required
 def manual_resync_shopify(request):
     email = request.GET.get('email')
     if not email:

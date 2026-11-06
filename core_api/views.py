@@ -33,12 +33,8 @@ CLIENT_TIME_ZONE = "Australia/Sydney"
 
 
 def _client_today():
-    try:
-        if _ZoneInfo is not None:
-            return _datetime.datetime.now(_ZoneInfo(CLIENT_TIME_ZONE)).date()
-    except Exception:
-        pass
-    return _datetime.datetime.now(_datetime.timezone.utc).date()
+    from core_api.utils.post_sync import client_today
+    return client_today()
 
 
 def validate_release_date_change(existing, new, today=None):
@@ -51,32 +47,6 @@ def validate_release_date_change(existing, new, today=None):
     if new is not None and new <= today:
         return MSG_RELEASE_DATE_PAST
     return None
-
-
-# [TEMPORARY DEBUG VIEW - TO BE DELETED]
-class DebugCheckProductsView(View):
-    def get(self, request):
-        secret = request.GET.get('secret')
-        if secret != "crowdlink_debug_77":
-            return JsonResponse({"error": "unauthorized"}, status=403)
-
-        email = request.GET.get('email')
-        if not email:
-            return JsonResponse({"error": "email required"}, status=400)
-
-        connections = ClientStoreConnection.objects.filter(client_email=email)
-        results = []
-        for c in connections:
-            product_count = Product.objects.filter(connection=c).count()
-            results.append({
-                "platform": c.platform,
-                "store_identifier": c.store_identifier,
-                "is_active": c.is_active,
-                "last_sync_at": c.last_sync_at.isoformat() if c.last_sync_at else None,
-                "product_count": product_count
-            })
-
-        return JsonResponse({"email": email, "connections": results})
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -223,6 +193,11 @@ class ProductReleaseDateView(View):
                         return JsonResponse({"error": "Bundle product not found for this connection"}, status=400)
                     if sub_product.category == 'Define Bundle':
                         return JsonResponse({"error": "A bundle cannot contain another bundle"}, status=400)
+                    if not sub_product.category:
+                        return JsonResponse(
+                            {"error": f"Set a category on '{sub_product.title}' before adding it to a bundle"},
+                            status=400,
+                        )
                     clean.append({"product_id": sub_uuid, "bundle_unitprice": round(price_val, 2)})
                 bundle_data = clean
             updates['json_bundle'] = bundle_data
@@ -288,6 +263,11 @@ class ProductReleaseDateView(View):
         # ----- REPORT TO ARIA (auto-derived from category) -----
         if 'category' in updates:
             updates['report_to_aria'] = is_category_aria_reportable(updates['category'])
+
+        # CLEANUP: If the product is no longer a bundle, wipe any leftover bundle data
+        effective_category = updates.get('category', product.category)
+        if effective_category != 'Define Bundle' and product.json_bundle is not None:
+            updates['json_bundle'] = None
 
         if not updates:
             if 'release_date' in payload:
@@ -472,8 +452,9 @@ def _serialize_transaction(d):
     s = d.sale
     product = d.variant.product if d.variant else None
     
-    if (d.product_category or "").startswith("Bundle-"):
-        category = d.product_category                      # keep the unpacked label
+    saved_cat = d.product_category or ""
+    if saved_cat.startswith("Bundle-") or saved_cat == "Define Bundle":
+        category = saved_cat                      # strictly keep bundle markers
     else:
         category = (product.category if product and product.category else d.product_category)
         
@@ -536,7 +517,7 @@ class SalesView(View):
                 "ssid": summary.ssid,
                 "sale_date": sale_day.strftime('%d %b %Y') if sale_day else "Unknown",
                 "sale_date_iso": sale_day.isoformat() if sale_day else None,
-                "type": "Webstore" if is_webstore else "POS",
+                "type": summary.type or line["sale_type"] or "",
                 "location": line["location_name"],
                 "location_id": str(summary.assigned_location_id) if summary.assigned_location_id else None,
                 "is_location_editable": not is_webstore,
@@ -589,9 +570,15 @@ class SalesSummaryDetailView(View):
                     summary.location = "Webstore Sales"
                 else:
                     generic_values = {'N/A', 'Unknown', '', None, 'Shopify POS', 'Square POS', 'Shopify Webstore', 'Square Webstore'}
+                    # To match AEST groupings, we filter by the AEST calendar day bounds
+                    import datetime
+                    from core_api.utils.post_sync import _client_tz
+                    from core_api.utils.post_sync import local_dt
+                    start_dt = local_dt(summary.summary_date, datetime.time.min)
+                    end_dt = local_dt(summary.summary_date, datetime.time.max)
                     day_sales = Sale.objects.filter(
                         connection=summary.connection,
-                        sale_date__date=summary.summary_date,
+                        sale_date__range=(start_dt, end_dt),
                         type=summary.type,
                     )
                     actual_locations = {
@@ -1052,8 +1039,10 @@ import csv
 import os
 from decimal import Decimal, InvalidOperation
 from core_api.models import StandardLocality
+from django.contrib.admin.views.decorators import staff_member_required
 
 
+@staff_member_required
 def import_localities_csv(request):
     """
     1-Click Importer: Reads 'clau_localities.csv' from the project root

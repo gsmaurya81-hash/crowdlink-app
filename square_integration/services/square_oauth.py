@@ -41,28 +41,14 @@ def get_square_auth_url(state_token):
     return req.url
 
 def exchange_code_for_token(auth_code):
-    if settings.DEBUG and auth_code == "test_mock_code":
-        from django.utils import timezone
-        from datetime import timedelta
-        return {
-            "access_token": "mock_access_token_123",
-            "refresh_token": "mock_refresh_token_123",
-            "merchant_id": "mock_merchant_123",
-            "expires_at": (timezone.now() + timedelta(days=30)).isoformat()
-        }
-        
     client_id = getattr(settings, 'SQUARE_APPLICATION_ID', os.environ.get('SQUARE_APPLICATION_ID', ''))
     client_secret = getattr(settings, 'SQUARE_APPLICATION_SECRET', os.environ.get('SQUARE_APPLICATION_SECRET', ''))
     environment = getattr(settings, 'SQUARE_ENVIRONMENT', os.environ.get('SQUARE_ENVIRONMENT', 'sandbox')).lower()
     redirect_uri = getattr(settings, 'SQUARE_REDIRECT_URI', os.environ.get('SQUARE_REDIRECT_URI', 'http://localhost:8000/api/square/callback/'))
     
     if not client_id or not client_secret:
-        return {
-            "access_token": "mock_access_token_123",
-            "refresh_token": "mock_refresh_token_123",
-            "merchant_id": "mock_merchant_123"
-        }
-    
+        raise RuntimeError("SQUARE_APPLICATION_ID / SQUARE_APPLICATION_SECRET are not configured")
+
     if environment == 'production':
         url = "https://connect.squareup.com/oauth2/token"
     else:
@@ -76,7 +62,7 @@ def exchange_code_for_token(auth_code):
         "redirect_uri": redirect_uri
     }
     
-    response = requests.post(url, json=data)
+    response = requests.post(url, json=data, timeout=15)
     response.raise_for_status()
     return response.json()
 
@@ -100,7 +86,7 @@ def refresh_access_token(connection):
         "grant_type": "refresh_token"
     }
     
-    response = requests.post(url, json=data)
+    response = requests.post(url, json=data, timeout=15)
     response.raise_for_status()
     token_data = response.json()
     

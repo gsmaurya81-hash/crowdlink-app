@@ -6,12 +6,10 @@ from .views import (
     ProductsHelpTextView,
     CategoryOptionsView,
     BundleProductsView,
-    DebugCheckProductsView,
     SalesView,
     SalesSummaryDetailView,
     SalesHelpTextView,
     ManualSyncView,
-    run_migrations,
     LocationsHelpTextView,
     LocationsListView,
     LocationDetailView,
@@ -29,7 +27,6 @@ urlpatterns = [
     path('products/help-text/', ProductsHelpTextView.as_view(), name='products_help_text'),
     path('products/category-options/', CategoryOptionsView.as_view(), name='products_category_options'),
     path('products/bundle-options/', BundleProductsView.as_view(), name='products_bundle_options'),
-    path('debug/check-products/', DebugCheckProductsView.as_view(), name='debug_check_products'),
     path('sales/help-text/', SalesHelpTextView.as_view(), name='sales_help_text'),
     path('sales/', SalesView.as_view(), name='api_sales'),
     path('sales/summary/<uuid:summary_id>/', SalesSummaryDetailView.as_view(), name='sales_summary_detail'),
@@ -39,9 +36,6 @@ urlpatterns = [
     path('locations/autocomplete/', LocationAutocompleteView.as_view(), name='location_autocomplete'),
     path('locations/', LocationsListView.as_view(), name='locations_list_create'),
     path('locations/<uuid:location_id>/', LocationDetailView.as_view(), name='location_detail_update_delete'),
-
-    # Temporary URL to trigger database creation from the browser
-    path('migrate-db/', run_migrations, name='migrate_db'),
 
     # 1-Click CSV Importer
     path('import-csv/', import_localities_csv, name='import_csv'),

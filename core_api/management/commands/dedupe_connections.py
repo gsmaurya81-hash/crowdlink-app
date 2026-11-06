@@ -17,7 +17,8 @@ first, then most recently synced, then oldest.
      already has a line for that variant, the stale copy is deleted. Lines with
      no matching keeper variant are left alone and counted in the report;
 then the keeper's post-sync refresh (bundles, SSID, SalesSummary, reporting
-dates) is re-run. Reported sales keep their reporting dates (refresh skips them).
+dates) is re-run and the keeper's summaries that have no sales behind them
+(stale leftovers, incl. old SSIDs) are deleted. Reported sales keep their reporting dates (refresh skips them).
 """
 import logging
 from collections import defaultdict
@@ -38,7 +39,11 @@ def _rank(c):
     return (not c.is_active, -(c.last_sync_at.timestamp() if c.last_sync_at else 0), c.created_at)
 
 
-def pick_keeper(conns, keep_emails=()):
+def pick_keeper(conns, keep_emails=(), keep_ids=()):
+    for cid in keep_ids:
+        match = [c for c in conns if str(c.pk).startswith(str(cid).lower())]
+        if match:
+            return match[0]
     for email in keep_emails:
         match = [c for c in conns if (c.client_email or "").lower() == email.lower()]
         if match:
@@ -60,32 +65,108 @@ def duplicate_groups(platform=None, store=None):
 
 def repair_group(keeper, others):
     """Apply the repair for one store. Returns a stats dict."""
+    from core_api.models import SalesLocation
     other_ids = [o.pk for o in others]
     stats = {"deactivated": 0, "sales_moved": 0, "lines_repointed": 0,
-             "lines_dupes_deleted": 0, "lines_unmatched": 0}
+             "lines_dupes_deleted": 0, "lines_unmatched": 0, "settings_copied": 0}
     with transaction.atomic():
         stats["deactivated"] = (ClientStoreConnection.objects
                                 .filter(pk__in=other_ids, is_active=True).update(is_active=False))
+        
+        # Copy Product settings
+        keeper_products = {p.external_product_id: p for p in Product.objects.filter(connection=keeper)}
+        # json_bundle holds Product UUIDs, and those belong to ONE connection. Copying
+        # it verbatim left the keeper pointing at the other connection's products
+        # ("product not found" in the bundle editor, and every save rejected).
+        # Translate each id through external_product_id; drop the ones with no match.
+        other_ext_by_pk = {str(p.pk): p.external_product_id
+                           for p in Product.objects.filter(connection_id__in=other_ids)}
+        keeper_pk_by_ext = {ext: str(p.pk) for ext, p in keeper_products.items()}
+
+        def _remap_bundle(bundle):
+            out = []
+            for item in bundle or []:
+                ext = other_ext_by_pk.get(str(item.get("product_id")))
+                new_pk = keeper_pk_by_ext.get(ext)
+                if new_pk:
+                    out.append({**item, "product_id": new_pk})
+            return out
+        for other_prod in Product.objects.filter(connection_id__in=other_ids):
+            kp = keeper_products.get(other_prod.external_product_id)
+            if kp:
+                changed = False
+                if other_prod.category and not kp.category:
+                    kp.category, changed = other_prod.category, True
+                # Never copy release_date or turn reporting ON for the keeper:
+                # both may be deliberate client choices, not empty defaults.
+                # User switched reporting OFF on the old row; keeper still has the
+                # untouched default (True, nothing else set) -> carry the OFF over.
+                if (not other_prod.report_to_aria and kp.report_to_aria
+                      and not kp.category and not kp.release_date):
+                    kp.report_to_aria, changed = False, True
+                if other_prod.json_bundle and not kp.json_bundle:
+                    remapped = _remap_bundle(other_prod.json_bundle)
+                    if remapped:
+                        kp.json_bundle, changed = remapped, True
+                if changed:
+                    kp.save(update_fields=['category', 'release_date', 'report_to_aria', 'json_bundle'])
+                    stats["settings_copied"] += 1
+
+        # Copy Summary settings
+        keeper_summaries = {(s.summary_date, s.type): s for s in SalesSummary.objects.filter(connection=keeper)}
+        for other_sum in SalesSummary.objects.filter(connection_id__in=other_ids):
+            ks = keeper_summaries.get((other_sum.summary_date, other_sum.type))
+            if ks:
+                changed = False
+                if other_sum.audience_size and not ks.audience_size:
+                    ks.audience_size, changed = other_sum.audience_size, True
+                if other_sum.notes and not ks.notes:
+                    ks.notes, changed = other_sum.notes, True
+                if other_sum.assigned_location_id and not ks.assigned_location_id:
+                    ks.assigned_location_id, changed = other_sum.assigned_location_id, True
+                if changed:
+                    ks.save(update_fields=['audience_size', 'notes', 'assigned_location_id'])
+                    stats["settings_copied"] += 1
+
+        # Copy Location settings
+        keeper_locations = {l.external_location_id: l for l in SalesLocation.objects.filter(connection=keeper)}
+        for other_loc in SalesLocation.objects.filter(connection_id__in=other_ids):
+            kl = keeper_locations.get(other_loc.external_location_id)
+            if kl:
+                changed = False
+                if other_loc.formatted_address and not kl.formatted_address:
+                    kl.formatted_address, changed = other_loc.formatted_address, True
+                if other_loc.locid and not kl.locid:
+                    kl.locid, changed = other_loc.locid, True
+                if other_loc.latitude and not kl.latitude:
+                    kl.latitude, kl.longitude, changed = other_loc.latitude, other_loc.longitude, True
+                if changed:
+                    kl.save(update_fields=['formatted_address', 'locid', 'latitude', 'longitude'])
+
         stats["sales_moved"] = Sale.objects.filter(connection_id__in=other_ids).update(connection=keeper)
 
-        stale = (SaleDetail.objects.filter(sale__connection=keeper)
-                 .exclude(variant__connection=keeper).select_related("variant"))
-        for d in list(stale):
-            sku = d.variant.sku_or_barcode
-            target = (Variant.objects.filter(connection=keeper, sku_or_barcode=sku).first()
-                      if sku else None)
-            if target is None:
-                stats["lines_unmatched"] += 1
-                continue
-            if SaleDetail.objects.filter(sale_id=d.sale_id, variant=target).exclude(pk=d.pk).exists():
-                d.delete()
-                stats["lines_dupes_deleted"] += 1
-            else:
-                d.variant, d.connection = target, keeper
-                d.save(update_fields=["variant", "connection"])
-                stats["lines_repointed"] += 1
+        # Match each stale line to the keeper's variant by platform id first, then SKU, so
+        # variants WITHOUT a SKU are matched too (they used to be left behind as "unmatched").
+        from core_api.utils.line_cleanup import fix_cross_connection_lines
+        fixed = fix_cross_connection_lines(SaleDetail, Variant, connection_id=keeper.pk, include_reported=True)
+        stats["lines_repointed"] = fixed["repointed"]
+        stats["lines_dupes_deleted"] = fixed["deleted"]
+        stats["lines_unmatched"] = fixed["unmatched"]
         SaleDetail.objects.filter(sale__connection=keeper).exclude(connection=keeper).update(connection=keeper)
     return stats
+
+
+def prune_orphan_summaries(keeper):
+    """Delete the keeper's SalesSummary rows that no sale backs any more
+    (e.g. leftovers from before the sales were moved onto the keeper).
+    Uses the same grouping as the Sales tab, so a summary is kept iff it
+    still has at least one sale for its (date, type). Returns the count."""
+    from core_api.utils.post_sync import build_summary_groups
+    live_ids = {line["summary"].pk for line in build_summary_groups([keeper])}
+    orphans = SalesSummary.objects.filter(connection=keeper).exclude(pk__in=live_ids)
+    count = orphans.count()
+    orphans.delete()
+    return count
 
 
 class Command(BaseCommand):
@@ -95,6 +176,8 @@ class Command(BaseCommand):
         parser.add_argument("--apply", action="store_true", help="Make the changes (default: report only)")
         parser.add_argument("--keep-email", action="append", default=[],
                             help="Account to keep when it is in a duplicate group (repeatable)")
+        parser.add_argument("--keep-id", action="append", default=[],
+                            help="Connection id (or its first 8 chars) to keep, e.g. 903f0670 (repeatable)")
         parser.add_argument("--platform", choices=["SHOPIFY", "SQUARE"])
         parser.add_argument("--store", help="Only this store_identifier")
 
@@ -110,7 +193,7 @@ class Command(BaseCommand):
                    mode, len(groups), opts["keep_email"] or None, opts["platform"], opts["store"])
 
         for (platform, store), conns in sorted(groups.items()):
-            keeper = pick_keeper(conns, opts["keep_email"])
+            keeper = pick_keeper(conns, opts["keep_email"], opts["keep_id"])
             others = [c for c in conns if c.pk != keeper.pk]
             self.stdout.write(f"=== {platform}  {store}  ({len(conns)} connections)")
             for c in conns:
@@ -156,6 +239,9 @@ class Command(BaseCommand):
                     from core_api.utils.post_sync import refresh_after_sync
                     refresh_after_sync(keeper)
                     self.stdout.write("  keeper post-sync refresh: done")
+                    removed = prune_orphan_summaries(keeper)
+                    self.stdout.write(f"  stale summaries removed (no sales behind them): {removed}")
+                    audit.info("DEDUPE_ORPHAN_SUMMARIES_REMOVED keeper=%s count=%s", keeper.pk, removed)
                     audit.info("DEDUPE_REFRESH_OK keeper=%s", keeper.pk)
                 except Exception as exc:
                     self.stdout.write(f"  keeper post-sync refresh FAILED: {exc} (re-run a manual sync)")

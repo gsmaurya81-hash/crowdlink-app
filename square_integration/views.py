@@ -20,6 +20,7 @@ from django.core.cache import cache
 from core_api.models import ClientStoreConnection, Sale, SaleDetail, Product, Variant, SalesLocation
 from .services.square_oauth import get_square_auth_url, exchange_code_for_token, get_valid_access_token
 from core_api.utils.aria import get_current_aria_week_start
+from core_api.utils.barcodes import duplicate_barcode_info, duplicate_barcode_fields
 def is_valid_return_url(url):
     if not url:
         return False
@@ -115,17 +116,29 @@ class SquareCallbackView(View):
                           "owner_email=%s owner_connection=%s", email, merchant_id, existing.client_email, existing.pk)
             return conflict_response('SQUARE')
 
-        connection, created = ClientStoreConnection.objects.update_or_create(
-            client_email=email,
-            platform='SQUARE',
-            defaults={
-                'store_identifier': merchant_id,
-                'access_token': access_token,
-                'refresh_token': refresh_token,
-                'token_expires_at': expires_at,
-                'is_active': True
-            }
-        )
+        from core_api.utils.connection_guard import find_existing_connection
+        connection = find_existing_connection('SQUARE', merchant_id, email)
+        created = False
+
+        if connection:
+            connection.client_email = email
+            connection.access_token = access_token
+            connection.refresh_token = refresh_token
+            connection.token_expires_at = expires_at
+            connection.is_active = True
+            connection.save(update_fields=['client_email', 'access_token', 'refresh_token', 'token_expires_at', 'is_active'])
+        else:
+            connection = ClientStoreConnection.objects.create(
+                client_email=email,
+                platform='SQUARE',
+                store_identifier=merchant_id,
+                access_token=access_token,
+                refresh_token=refresh_token,
+                token_expires_at=expires_at,
+                is_active=True
+            )
+            created = True
+
         audit.info("STORE_CONNECT platform=%s email=%s store=%s new_connection=%s",
                    'SQUARE', email, connection.store_identifier, created)
 
@@ -135,8 +148,6 @@ class SquareCallbackView(View):
                 result = run_connection_sync(connection)
                 if result.get('status') == 'error':
                     raise RuntimeError(result.get('error'))
-                from core_api.utils.connection_guard import absorb_previous_owners
-                absorb_previous_owners(connection)
             except Exception:
                 error_detail = traceback.format_exc()
                 logger.error("[SYNC] first sync after connect FAILED for %s - %s:\n%s",
@@ -183,37 +194,48 @@ class SquareCallbackView(View):
 @method_decorator(csrf_exempt, name='dispatch')
 class SquareOrderWebhookView(View):
     def post(self, request):
-        mock_mode = settings.DEBUG and request.GET.get('mock', '').lower() == 'true'
+        signature_header = request.headers.get('x-square-hmacsha256-signature')
+        if not signature_header:
+            return JsonResponse({"error": "Missing Square signature header"}, status=401)
 
-        if not mock_mode:
-            signature_header = request.headers.get('x-square-hmacsha256-signature')
-            if not signature_header:
-                return JsonResponse({"error": "Missing Square signature header"}, status=401)
+        signature_key = getattr(settings, 'SQUARE_WEBHOOK_SIGNATURE_KEY', os.environ.get('SQUARE_WEBHOOK_SIGNATURE_KEY', ''))
 
-            signature_key = getattr(settings, 'SQUARE_WEBHOOK_SIGNATURE_KEY', os.environ.get('SQUARE_WEBHOOK_SIGNATURE_KEY', ''))
+        # FORCE HTTPS: Fixes the cPanel HTTP proxy bug for signature verification
+        domain = request.get_host()
+        notification_url = f"https://{domain}{request.path}"
 
-            # FORCE HTTPS: Fixes the cPanel HTTP proxy bug for signature verification
-            domain = request.get_host()
-            notification_url = f"https://{domain}{request.path}"
+        string_to_sign = notification_url + request.body.decode('utf-8')
+        hash_str = hmac.new(
+            signature_key.encode('utf-8'),
+            string_to_sign.encode('utf-8'),
+            hashlib.sha256
+        ).digest()
+        calculated_signature = base64.b64encode(hash_str).decode('utf-8')
 
-            string_to_sign = notification_url + request.body.decode('utf-8')
-            hash_str = hmac.new(
-                signature_key.encode('utf-8'),
-                string_to_sign.encode('utf-8'),
-                hashlib.sha256
-            ).digest()
-            calculated_signature = base64.b64encode(hash_str).decode('utf-8')
-
-            if not hmac.compare_digest(calculated_signature, signature_header):
-                return JsonResponse({"error": "Invalid Square signature"}, status=401)
+        if not hmac.compare_digest(calculated_signature, signature_header):
+            return JsonResponse({"error": "Invalid Square signature"}, status=401)
 
         try:
             payload = json.loads(request.body)
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
 
-        data_object = payload.get('data', {}).get('object', {}).get('order_created', {})
         merchant_id = payload.get('merchant_id', '')
+
+        # oauth.authorization.revoked: the seller (or Square) revoked our access, so the
+        # stored tokens are dead. Deactivate (not delete) the connection so the UI shows it
+        # as disconnected and the sync stops. A new authorisation re-activates it in
+        # SquareCallbackView. Subscribe to this event on the same webhook subscription.
+        if payload.get('type') == 'oauth.authorization.revoked':
+            n = 0
+            if merchant_id:
+                n = ClientStoreConnection.objects.filter(
+                    store_identifier=merchant_id, platform='SQUARE', is_active=True
+                ).update(is_active=False)
+            audit.info("STORE_UNINSTALLED platform=SQUARE store=%s deactivated=%s", merchant_id, n)
+            return JsonResponse({"status": "received"}, status=200)
+
+        data_object = payload.get('data', {}).get('object', {}).get('order_created', {})
 
         # Grab the ID from the metadata payload
         order_id = data_object.get('order_id', '')
@@ -222,154 +244,12 @@ class SquareOrderWebhookView(View):
 
         connection = ClientStoreConnection.objects.filter(store_identifier=merchant_id, platform='SQUARE').first()
 
-        if mock_mode and not connection:
-            connection = ClientStoreConnection.objects.filter(platform='SQUARE').first()
-
         if not connection:
             return JsonResponse({"error": "Store connection not found"}, status=404)
 
-        # Fetch full order details via API (because Webhook only sends metadata)
-        environment = getattr(settings, "SQUARE_ENVIRONMENT", os.environ.get("SQUARE_ENVIRONMENT", "sandbox")).lower()
-        base_url = "https://connect.squareup.com" if environment == "production" else "https://connect.squareupsandbox.com"
-
-        url = f"{base_url}/v2/orders/{order_id}"
-        try:
-            headers = {
-                "Authorization": f"Bearer {get_valid_access_token(connection)}",
-                "Content-Type": "application/json"
-            }
-            response = requests.get(url, headers=headers)
-            response.raise_for_status()
-            order_data = response.json().get('order', {})
-        except Exception as e:
-            logger.error(f"Square webhook failed to fetch full order {order_id}: {e}")
-            return JsonResponse({"error": "Failed to fetch full order from Square"}, status=500)
-
-        created_at_str = order_data.get('created_at')
-        if not created_at_str:
-            return JsonResponse({"error": "Missing created_at"}, status=400)
-
-        created_at_dt = parse_datetime(created_at_str)
-
-        is_within_aria = True
-        if created_at_dt and created_at_dt < get_current_aria_week_start():
-            is_within_aria = False
-
-        source_name = order_data.get('source', {}).get('name', '')
-        channel = 'WEBSTORE' if 'square online' in source_name.lower() else 'POS'
-        location_id = str(order_data.get('location_id', ''))
-
-        # Map actual_location dynamically
-        system_loc_str = 'Square Webstore' if channel == 'WEBSTORE' else 'Square POS'
-        actual_loc_str = None
-
-        if location_id and channel == 'POS':
-            loc_obj = SalesLocation.objects.filter(connection=connection, external_location_id=location_id).first()
-            if loc_obj:
-                city_str = loc_obj.city or ""
-                prov_str = loc_obj.province or ""
-                combined = f"{city_str} {prov_str}".strip()
-                actual_loc_str = combined if combined else loc_obj.name
-
-        tenders = order_data.get('tenders', [])
-
-        payment_type = 'OTHER_USER_DEFINED'
-        if tenders:
-            tender_type = tenders[0].get('type', '')
-            if tender_type == 'CASH':
-                payment_type = 'CASH'
-            elif tender_type == 'CARD':
-                payment_type = 'CREDIT_CARD'
-            elif tender_type == 'SQUARE_GIFT_CARD':
-                payment_type = 'GIFT_CARD_REDEMPTION'
-
-        sale_channel = 'POS' if channel == 'POS' else 'WEBSTORE'
-        is_presale = (sale_channel == 'WEBSTORE')
-        
-        # Client Rule: Group any form of card payment as 'Card'
-        is_card = payment_type in ('CREDIT_CARD', 'MANUAL_CARD_ENTRY', 'CARD_ON_FILE')
-
-        # Client Rule: Delete old unpacked bundle items before regenerating them (Order-level cleanup)
-        existing_sale = Sale.objects.filter(connection=connection, external_order_id=order_id).first()
-        if existing_sale and not existing_sale.reported_flag:
-            SaleDetail.objects.filter(sale=existing_sale, product_category__startswith="Bundle-").delete()
-
-        line_items = order_data.get('line_items', [])
-        synced_count = 0
-
-        for item in line_items:
-            sku = item.get('note', '')
-            catalog_object_id = item.get('catalog_object_id', '')
-            quantity = int(item.get('quantity', 1))
-
-            amount = item.get('base_price_money', {}).get('amount', 0)
-            price = float(amount) / 100.0
-
-            if not sku and not catalog_object_id:
-                continue
-
-            variant = None
-            if catalog_object_id:
-                variant = Variant.objects.filter(connection=connection, external_catalog_id=catalog_object_id).select_related('product').first()
-
-            if not variant and sku:
-                logger.warning(f"Square webhook: Falling back to SKU matching for '{sku}'")
-                variant = Variant.objects.filter(connection=connection, sku_or_barcode=sku).select_related('product').first()
-
-            if variant:
-                product = variant.product
-                sale_type = f"{system_loc_str.replace(' ', '-')}-{'Card' if is_card else 'Other'}"
-
-                # 1. Upsert Sale Header (1 unique row per external_order_id)
-                sale, _ = Sale.objects.update_or_create(
-                    external_order_id=order_id,
-                    defaults={
-                        'connection': connection,
-                        'sale_date': created_at_dt,
-                        'system_location': system_loc_str,
-                        'actual_location': actual_loc_str if actual_loc_str else system_loc_str,
-                        'sale_channel': sale_channel,
-                        'is_presale': is_presale,
-                        'payment_type': payment_type,
-                        'type': sale_type,
-                        'source_platform': 'Square',
-                        'is_within_current_aria_period': is_within_aria,
-                    }
-                )
-
-                # 2. Upsert SaleDetail Line Item (linked to Sale header and Variant)
-                sale_detail, _ = SaleDetail.objects.update_or_create(
-                    sale=sale,
-                    variant=variant,
-                    defaults={
-                        'connection': connection,
-                        'external_order_id': order_id,
-                        'sku_or_barcode': variant.sku_or_barcode,
-                        'sales_units': quantity,
-                        'price': price,
-                        'product_title': product.title,
-                        'product_category': product.category,
-                    }
-                )
-
-                # --- REPORTING DATE LOGIC ---
-                from core_api.utils.product_sync import apply_reporting_dates
-                apply_reporting_dates(
-                    sale=sale, 
-                    detail=sale_detail, 
-                    product=product, 
-                    sync_started_at=timezone.now(), 
-                    is_card_sale=is_card
-                )
-
-                synced_count += 1
-
-        # Client Rule: Hand off to the shared bundle helper once per order
-        if synced_count > 0:
-            from core_api.utils.post_sync import unpack_bundles_for_sale
-            unpack_bundles_for_sale(sale, connection, timezone.now())
-
-        return JsonResponse({"status": "success", "synced_transactions": synced_count})
+        # Real-time processing disabled (CLXL03). Daily/manual sync handles all orders safely.
+        # Acknowledge the webhook with 200 OK so Square stops retrying it.
+        return JsonResponse({"status": "success", "message": "Real-time processing disabled", "synced_transactions": 0})
 
 
 class SquareProductsView(View):
@@ -385,7 +265,9 @@ class SquareProductsView(View):
         if not connection:
             return JsonResponse({"products": []})
 
-        products = Product.objects.filter(connection=connection).order_by('-id')
+        products = (Product.objects.filter(connection=connection)
+                    .prefetch_related('variants').order_by('-id'))
+        duplicates = duplicate_barcode_info(connection)
 
         data = []
         for p in products:
@@ -393,7 +275,9 @@ class SquareProductsView(View):
                 "id": str(p.id),
                 "title": p.title,
                 "combined_sku_bar": p.combined_sku_bar,
+                "price": str(p.price) if p.price is not None else None,
                 "has_missing_identifier": p.has_missing_identifier,
+                **duplicate_barcode_fields(duplicates, p),
                 "release_date": p.release_date.isoformat() if p.release_date else None,
                 "report_to_aria": p.report_to_aria,
                 "image_url": p.image_url,
@@ -402,12 +286,24 @@ class SquareProductsView(View):
                 "category": p.category,
                 "json_bundle": p.json_bundle,
                 "external_product_id": p.external_product_id,
+                "variants": [
+                    {
+                        "id": str(v.id),
+                        "title": v.title,
+                        "sku_or_barcode": v.sku_or_barcode,
+                        "price": str(v.price) if v.price is not None else None,
+                    }
+                    for v in p.variants.all()
+                ],
             })
 
         return JsonResponse({"products": data})
 
 
+from django.contrib.admin.views.decorators import staff_member_required
+
 @csrf_exempt
+@staff_member_required
 def manual_resync_square(request):
     from core_api.utils.product_sync import run_connection_sync
 

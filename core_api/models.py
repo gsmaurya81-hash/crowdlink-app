@@ -102,7 +102,12 @@ class Product(models.Model):
     image_url = models.URLField(max_length=500, null=True, blank=True)
     
     channel = models.CharField(max_length=50, null=True, blank=True, default='POS')
-    
+
+    # Ex-tax selling price. Lowest price among the product's variants (equal to the
+    # variant price for single-variant products). NULL = platform gave no usable price.
+    # Platform-owned: refreshed by every sync (see core_api/utils/product_sync.py).
+    price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
+
     class Meta:
         # Prevent duplicate parent product imports per store connection
         unique_together = ('connection', 'external_product_id')
@@ -127,10 +132,23 @@ class Variant(models.Model):
 
     title = models.CharField(max_length=255, null=True, blank=True)
     image_url = models.URLField(max_length=500, null=True, blank=True)
+    # Ex-tax selling price of this variant (see Product.price). NULL = not available.
+    price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ('connection', 'sku_or_barcode')
+        # A variant is identified by its PLATFORM id, never by its SKU/barcode: clients
+        # can enter the same barcode on two products (bundles, re-listed products) and
+        # each product must keep its own variant and its own sales. sku_or_barcode is a
+        # plain (non-unique) lookup column.
+        indexes = [
+            models.Index(fields=['connection', 'sku_or_barcode'], name='variant_conn_sku_idx'),
+        ]
+        constraints = [
+            # One row per platform variant.
+            models.UniqueConstraint(fields=['connection', 'external_catalog_id'],
+                                    name='unique_variant_per_catalog_id'),
+        ]
 
     def __str__(self):
         return f"{self.product.title} - {self.sku_or_barcode}"
@@ -191,7 +209,7 @@ class Sale(models.Model):
     is_within_current_aria_period = models.BooleanField(default=True)
     
     # Official Reporting Dates
-    aria_reporting_date = models.DateTimeField(null=True, blank=True)
+    aria_reporting_date = models.DateField(null=True, blank=True)
     clau_reporting_date = models.DateField(null=True, blank=True)
     reported_flag = models.BooleanField(default=False, db_index=True)
     
@@ -216,7 +234,7 @@ class SaleDetail(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
 
     # Official Reporting Dates (per line item)
-    aria_reporting_date = models.DateTimeField(null=True, blank=True)
+    aria_reporting_date = models.DateField(null=True, blank=True)
     clau_reporting_date = models.DateField(null=True, blank=True)
 
     # Denormalized snapshots for reporting

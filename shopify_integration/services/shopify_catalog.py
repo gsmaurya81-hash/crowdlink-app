@@ -22,6 +22,8 @@ from django.utils.dateparse import parse_datetime
 
 from core_api.models import Product, Sale, SaleDetail, Variant
 from core_api.utils.aria import get_current_aria_week_start
+from core_api.utils.barcodes import unique_variant_by_sku
+from core_api.utils.post_sync import other_connection_owns_sale
 from core_api.utils.product_sync import (
     sync_upsert_product,
     MODE_INITIAL, NEW_CONNECTION_RECORD_DAYS, NEW_CONNECTION_SALES_DAYS,
@@ -44,7 +46,7 @@ PRODUCT_FIELDS = """
   featuredImage { url }
   variants(first: %d) {
     pageInfo { hasNextPage endCursor }
-    edges { node { id sku barcode title image { url } } }
+    edges { node { id sku barcode title price taxable image { url } } }
   }
 """ % VARIANTS_PAGE
 
@@ -88,8 +90,13 @@ def _gql(connection, token, query, variables=None):
         if any((e.get("extensions") or {}).get("code") == "THROTTLED" for e in errors):
             time.sleep(2 ** attempt)
             continue
-        if errors and not body.get("data"):
-            raise RuntimeError(f"Shopify GraphQL error: {errors}")
+        if errors:
+            # Never swallow GraphQL errors: a missing scope (ACCESS_DENIED) used to
+            # come back as products=null and the sync "succeeded" with 0 variants.
+            logger.warning("Shopify GraphQL errors for %s: %s", connection.store_identifier, errors)
+            denied = [e for e in errors if (e.get("extensions") or {}).get("code") == "ACCESS_DENIED"]
+            if denied or not body.get("data"):
+                raise RuntimeError(f"Shopify GraphQL error: {errors}")
         return body["data"]
     raise RuntimeError("Shopify GraphQL kept returning THROTTLED")
 
@@ -118,6 +125,23 @@ def fetch_orders(connection, token, *, created_at_min=None, updated_at_min=None)
     return orders
 
 
+ORDER_WINDOW_DAYS = 60   # Shopify only returns the last 60 days of orders without read_all_orders
+
+
+def has_read_all_orders(connection, token):
+    """True/False if the token's granted scopes include read_all_orders, None if the
+    check itself failed. Without this scope Shopify silently drops orders older than
+    60 days instead of returning an error."""
+    try:
+        data = _gql(connection, token, "{ currentAppInstallation { accessScopes { handle } } }")
+        handles = [x.get("handle") for x in
+                   ((data.get("currentAppInstallation") or {}).get("accessScopes") or [])]
+        return "read_all_orders" in handles
+    except Exception:
+        logger.warning("[SYNC] could not read granted scopes for %s", connection.store_identifier)
+        return None
+
+
 def fetch_locations(connection, token):
     url = f"https://{connection.store_identifier}/admin/api/{API_VERSION}/locations.json"
     headers = {"X-Shopify-Access-Token": token, "Content-Type": "application/json"}
@@ -129,7 +153,7 @@ def _extra_variants(connection, token, product_id, cursor):
     q = """query($id: ID!, $cursor: String) { product(id: $id) {
              variants(first: %d, after: $cursor) {
                pageInfo { hasNextPage endCursor }
-               edges { node { id sku barcode title image { url } } } } } }""" % VARIANTS_PAGE
+               edges { node { id sku barcode title price taxable image { url } } } } } }""" % VARIANTS_PAGE
     while cursor:
         data = _gql(connection, token, q, {"id": product_id, "cursor": cursor})
         conn = ((data.get("product") or {}).get("variants")) or {}
@@ -168,7 +192,7 @@ def fetch_products(connection, token, search_query):
 def fetch_variants_by_gid(connection, token, gids):
     """Yield (product_node, variant_node) for specific variant GIDs."""
     q = """query($ids: [ID!]!) { nodes(ids: $ids) { ... on ProductVariant {
-             id sku barcode title image { url }
+             id sku barcode title price taxable image { url }
              product { id title publishedAt createdAt updatedAt featuredImage { url } } } } }"""
     gids = list(gids)
     for i in range(0, len(gids), 100):
@@ -181,6 +205,39 @@ def fetch_variants_by_gid(connection, token, gids):
 # --------------------------------------------------------------------------
 # Upserts
 # --------------------------------------------------------------------------
+def shop_taxes_included(connection, token=None):
+    """True when the shop's prices already include tax, False when they exclude it,
+    None when it cannot be read. Cached on the connection object for the sync run."""
+    cached = getattr(connection, "_taxes_included", "unset")
+    if cached != "unset":
+        return cached
+    value = None
+    try:
+        data = _gql(connection, token or get_valid_access_token(connection),
+                    "{ shop { taxesIncluded } }")
+        value = (data.get("shop") or {}).get("taxesIncluded")
+    except Exception:
+        logger.warning("could not read shop taxesIncluded for %s", connection.store_identifier)
+    connection._taxes_included = value
+    return value
+
+
+def variant_price_ex_tax(connection, price, taxable, token=None):
+    """Ex-tax price from a Shopify variant price. When the shop shows tax-inclusive
+    prices, the sales-tax rate (settings.PRICE_TAX_RATE, default 10% GST) is divided out
+    of taxable variants. Unknown tax setting -> None (the stored price is left alone)."""
+    if price in (None, ""):
+        return None
+    included = shop_taxes_included(connection, token)
+    if included is None:
+        return None
+    value = float(price)
+    if included and taxable is not False:
+        from django.conf import settings
+        value = value / (1.0 + float(getattr(settings, "PRICE_TAX_RATE", 0.10)))
+    return round(value, 2)
+
+
 def _upsert_variant(connection, product_node, var_node):
     var_gid = var_node.get("id", "")
     sku = var_node.get("sku") or ""
@@ -202,6 +259,7 @@ def _upsert_variant(connection, product_node, var_node):
             "external_catalog_id": var_gid,
             "external_product_id": product_node.get("id"),
             "image_url": image,
+            "price": variant_price_ex_tax(connection, var_node.get("price"), var_node.get("taxable")),
             "channel": "Online" if product_node.get("publishedAt") else "POS",
             "webstore_creation_date": parse_datetime(created_str) if created_str else None,
         },
@@ -234,6 +292,11 @@ def process_orders(connection, orders, sync_started_at):
             continue
         created_dt = parse_datetime(created_str)
         order_id = str(order.get("id", ""))
+        # An order that already belongs to ANOTHER connection is not ours to take over:
+        # skip it (its owner's own sync keeps it current).
+        if other_connection_owns_sale(connection, order_id):
+            skipped += len(order.get("line_items", []))
+            continue
         channel, payment_type = _channel_and_payment(order)
         sale_channel = "POS" if channel == "POS" else "WEBSTORE"
         system_loc = "Shopify Webstore" if channel == "ONLINE" else "Shopify POS"
@@ -243,6 +306,8 @@ def process_orders(connection, orders, sync_started_at):
         is_card = payment_type in ('CREDIT_CARD', 'MANUAL_CARD_ENTRY', 'CARD_ON_FILE')
         sale_type = f"{system_loc.replace(' ', '-')}-{'Card' if is_card else 'Other'}"
 
+        order_sale = None
+        order_variant_ids = []
         for item in order.get("line_items", []):
             sku = item.get("sku") or ""
             variant_id = str(item.get("variant_id") or "")
@@ -256,11 +321,14 @@ def process_orders(connection, orders, sync_started_at):
                     external_catalog_id=f"gid://shopify/ProductVariant/{variant_id}",
                 ).select_related("product").first()
             if not variant and sku:
-                variant = Variant.objects.filter(connection=connection, sku_or_barcode=sku).select_related("product").first()
+                # Only when the SKU is unambiguous: several products may share it, and the
+                # line must never be guessed onto one of them.
+                variant = unique_variant_by_sku(connection, sku)
             if not variant:
                 logger.warning(f"[SYNC] order {order_id}: no variant for sku='{sku}' variant='{variant_id}'")
                 skipped += 1
                 continue
+            order_variant_ids.append(variant.pk)
 
             product = variant.product
             sale, _ = Sale.objects.update_or_create(
@@ -276,12 +344,12 @@ def process_orders(connection, orders, sync_started_at):
                 },
             )
             processed_sales.add(sale)
-                
+            order_sale = sale
+
             detail, _ = SaleDetail.objects.update_or_create(
                 sale=sale, variant=variant,
                 defaults={
                     "connection": connection, "external_order_id": order_id,
-                    "sku_or_barcode": variant.sku_or_barcode,
                     "sales_units": int(item.get("quantity", 1)),
                     "price": item.get("price", 0.0),
                     "product_title": product.title, "product_category": product.category,
@@ -298,6 +366,14 @@ def process_orders(connection, orders, sync_started_at):
                 is_card_sale=is_card
             )
             saved += 1
+
+        # A re-connected store: this sale may still carry lines on the OLD connection's
+        # variants. Now that this order's own lines are saved, fold those away so
+        # each item appears once (see core_api/utils/line_cleanup.py).
+        if order_sale is not None:
+            from core_api.utils.line_cleanup import cleanup_sale_lines, drop_misattributed_lines
+            cleanup_sale_lines(order_sale)
+            drop_misattributed_lines(order_sale, order_variant_ids)
 
         # Client Rule: Hand off to the shared bundle helper once per order
         from core_api.utils.post_sync import unpack_bundles_for_sale
@@ -330,6 +406,18 @@ def run_sync(connection, mode, since, started_at):
     # all_presales_loaded = false -> load ALL sales back to webstore_creation_date.
     presale_qs = presale_backfill_products(connection)
     oldest_presale = presale_backfill_start(presale_qs, started_at)
+    # Presale history older than 60 days needs read_all_orders. Old installs do not
+    # have it until the store reconnects, so say so and keep those products pending
+    # (instead of marking them "loaded" with truncated data).
+    presale_limit = started_at - timedelta(days=ORDER_WINDOW_DAYS)
+    presale_capped = False
+    if oldest_presale and oldest_presale < presale_limit:
+        presale_capped = has_read_all_orders(connection, token) is False
+        if presale_capped:
+            logger.warning("[SYNC] %s lacks read_all_orders: presale history is limited to the last "
+                           "%s days until the store reconnects the app", connection.store_identifier,
+                           ORDER_WINDOW_DAYS)
+    stats["presale_history_capped"] = presale_capped
     if oldest_presale and oldest_presale < sales_from:
         seen = {str(o.get("id")) for o in orders}
         for o in fetch_orders(connection, token, created_at_min=oldest_presale):
@@ -367,8 +455,9 @@ def run_sync(connection, mode, since, started_at):
         record_cutoff = started_at - timedelta(days=NEW_CONNECTION_RECORD_DAYS)
         search = f"created_at:>='{iso_z(record_cutoff)}'"
     else:
-        search = f"updated_at:>'{iso_z(since)}'"
+        search = f"updated_at:>'{iso_z(getattr(connection, '_catalog_since', None) or since)}'"
     prod_count = 0
+    stats["products_search"] = search
     for pnode, vnode in fetch_products(connection, token, search):
         _upsert_variant(connection, pnode, vnode)
         prod_count += 1
@@ -381,12 +470,18 @@ def run_sync(connection, mode, since, started_at):
         _upsert_variant(connection, pnode, vnode)
         prod_count += 1
     stats["variants_synced"] = prod_count
+    # Evidence for price checks: True = the shop shows tax-inclusive prices and
+    # taxable variants had PRICE_TAX_RATE divided out; False = prices stored as-is.
+    stats["shop_taxes_included"] = getattr(connection, "_taxes_included", None)
 
     # ---- 4. Save sales (after products so every line item can be matched) -
     saved, skipped = process_orders(connection, orders, started_at)
     stats.update(sale_lines_saved=saved, sale_lines_skipped=skipped)
 
-    if presale_qs.exists():
+    if presale_capped:
+        # Only products whose whole history fits inside the 60-day window are complete.
+        presale_qs.filter(webstore_creation_date__gte=presale_limit).update(all_presales_loaded=True)
+    elif presale_qs.exists():
         presale_qs.update(all_presales_loaded=True)
     return stats
 

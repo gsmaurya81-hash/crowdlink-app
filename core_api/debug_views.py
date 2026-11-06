@@ -13,11 +13,13 @@ from collections import defaultdict
 
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.admin.views.decorators import staff_member_required
 
 from core_api.models import ClientStoreConnection, SaleDetail, Variant
 
 
 @csrf_exempt
+@staff_member_required
 def find_duplicate_products(request):
     """
     GET /api/debug/duplicate-products/?email=<client email>[&order=<order id>]

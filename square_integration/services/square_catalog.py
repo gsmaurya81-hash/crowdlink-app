@@ -28,6 +28,8 @@ from .square_oauth import get_valid_access_token
 
 from core_api.models import Product, Sale, SaleDetail, Variant
 from core_api.utils.aria import get_current_aria_week_start
+from core_api.utils.barcodes import unique_variant_by_sku
+from core_api.utils.post_sync import other_connection_owns_sale
 from core_api.utils.product_sync import (
     sync_upsert_product,
     MODE_INITIAL, NEW_CONNECTION_RECORD_DAYS, NEW_CONNECTION_SALES_DAYS,
@@ -115,14 +117,45 @@ def fetch_orders(token, location_ids, *, since, by):
 
 
 def _images(objs):
-    return {o["id"]: (o.get("image_data") or {}).get("url") for o in objs if o.get("type") == "IMAGE"}
+    """{image id: url} for IMAGE objects, plus {"tax:<id>": (rate %, inclusive?)} for TAX
+    objects. The tax entries ride in the same dict so every fetch path that already
+    returns `images` also delivers the tax rates needed to turn prices ex-tax."""
+    out = {o["id"]: (o.get("image_data") or {}).get("url") for o in objs if o.get("type") == "IMAGE"}
+    for o in objs:
+        if o.get("type") == "TAX":
+            td = o.get("tax_data") or {}
+            try:
+                rate = float(td.get("percentage"))
+            except (TypeError, ValueError):
+                continue
+            out[f"tax:{o['id']}"] = (rate, td.get("inclusion_type") == "INCLUSIVE")
+    return out
+
+
+def variation_price_ex_tax(item_data, vd, images):
+    """Ex-tax price (dollars) of a Square variation, or None when it cannot be known.
+    Square catalog prices exclude tax unless the item's tax is INCLUSIVE, in which case
+    the rate is divided out. Variable-price variations and items whose tax object we
+    could not load give None (the stored price is left alone)."""
+    money = vd.get("price_money") or {}
+    if vd.get("pricing_type") == "VARIABLE_PRICING" or money.get("amount") is None:
+        return None
+    price = float(money["amount"]) / 100.0
+    for tax_id in item_data.get("tax_ids") or []:
+        tax = images.get(f"tax:{tax_id}")
+        if tax is None:
+            return None
+        rate, inclusive = tax
+        if inclusive:
+            price = price / (1.0 + rate / 100.0)
+    return round(price, 2)
 
 
 def fetch_all_items(token):
     """Full catalog (ITEM + IMAGE). Returns (items, images)."""
     objs, cursor = [], None
     while True:
-        params = {"types": "ITEM,IMAGE"}
+        params = {"types": "ITEM,IMAGE,TAX"}
         if cursor:
             params["cursor"] = cursor
         data = _request("GET", "/v2/catalog/list", token, params=params)
@@ -203,6 +236,7 @@ def _upsert_item(connection, item, images):
                 "external_catalog_id": var.get("id"), "external_product_id": item_id,
                 "image_url": image_url, "channel": channel,
                 "webstore_creation_date": created_dt,
+                "price": variation_price_ex_tax(item_data, vd, images),
             },
         )
         count += 1
@@ -219,6 +253,11 @@ def process_orders(connection, orders, sync_started_at):
             continue
         created_dt = parse_datetime(created_str)
         order_id = str(order.get("id", ""))
+        # An order that already belongs to ANOTHER connection is not ours to take over:
+        # skip it (its owner's own sync keeps it current).
+        if other_connection_owns_sale(connection, order_id):
+            skipped += len(order.get("line_items", []))
+            continue
         source_name = (order.get("source") or {}).get("name", "")
         is_web = "square online" in source_name.lower()
         sale_channel = "WEBSTORE" if is_web else "POS"
@@ -236,6 +275,8 @@ def process_orders(connection, orders, sync_started_at):
         is_card = payment_type in ('CREDIT_CARD', 'MANUAL_CARD_ENTRY', 'CARD_ON_FILE')
         sale_type = f"{system_loc.replace(' ', '-')}-{'Card' if is_card else 'Other'}"
 
+        order_sale = None
+        order_variant_ids = []
         for item in order.get("line_items", []):
             cat_id = item.get("catalog_object_id", "")
             sku = item.get("note", "")
@@ -246,11 +287,14 @@ def process_orders(connection, orders, sync_started_at):
             if cat_id:
                 variant = Variant.objects.filter(connection=connection, external_catalog_id=cat_id).select_related("product").first()
             if not variant and sku:
-                variant = Variant.objects.filter(connection=connection, sku_or_barcode=sku).select_related("product").first()
+                # Only when the SKU is unambiguous: several products may share it, and the
+                # line must never be guessed onto one of them.
+                variant = unique_variant_by_sku(connection, sku)
             if not variant:
                 logger.warning(f"[SYNC] Square order {order_id}: no variant for '{cat_id}' / '{sku}'")
                 skipped += 1
                 continue
+            order_variant_ids.append(variant.pk)
 
             product = variant.product
             price = float((item.get("base_price_money") or {}).get("amount", 0)) / 100.0
@@ -266,12 +310,12 @@ def process_orders(connection, orders, sync_started_at):
                 },
             )
             processed_sales.add(sale)
-                
+            order_sale = sale
+
             detail, _ = SaleDetail.objects.update_or_create(
                 sale=sale, variant=variant,
                 defaults={
                     "connection": connection, "external_order_id": order_id,
-                    "sku_or_barcode": variant.sku_or_barcode,
                     "sales_units": int(item.get("quantity", 1)), "price": price,
                     "product_title": product.title, "product_category": product.category,
                 },
@@ -286,6 +330,14 @@ def process_orders(connection, orders, sync_started_at):
                 is_card_sale=is_card
             )
             saved += 1
+
+        # A re-connected store: this sale may still carry lines on the OLD connection's
+        # variants. Now that this order's own lines are saved, fold those away so
+        # each item appears once (see core_api/utils/line_cleanup.py).
+        if order_sale is not None:
+            from core_api.utils.line_cleanup import cleanup_sale_lines, drop_misattributed_lines
+            cleanup_sale_lines(order_sale)
+            drop_misattributed_lines(order_sale, order_variant_ids)
 
         # Client Rule: Hand off to the shared bundle helper once per order
         from core_api.utils.post_sync import unpack_bundles_for_sale
@@ -374,7 +426,8 @@ def run_sync(connection, mode, since, started_at):
             if is_recent or is_referenced:
                 var_count += _upsert_item(connection, item, images)
     else:
-        items, images = fetch_items_changed_since(token, since)
+        items, images = fetch_items_changed_since(
+            token, getattr(connection, "_catalog_since", None) or since)
         for item in items:
             var_count += _upsert_item(connection, item, images)
 

@@ -43,13 +43,81 @@ CLIENT_TIME_ZONE = "Australia/Sydney"
 # --------------------------------------------------------------------------
 # Dates
 # --------------------------------------------------------------------------
+class _SydneyTZ(datetime.tzinfo):
+    """Built-in Australia/Sydney rules (AEST +10 / AEDT +11; DST from the first
+    Sunday in October 02:00 to the first Sunday in April 03:00, in force since
+    2008). Used ONLY when the server has no timezone database, so the app does
+    not silently fall back to UTC."""
+    _STD = datetime.timedelta(hours=10)
+    _DST = datetime.timedelta(hours=11)
+
+    @staticmethod
+    def _first_sunday(year, month):
+        d = datetime.date(year, month, 1)
+        return d + datetime.timedelta(days=(6 - d.weekday()) % 7)
+
+    def _is_dst_local(self, dt):
+        y = dt.year
+        start = datetime.datetime.combine(self._first_sunday(y, 10), datetime.time(2, 0))
+        end = datetime.datetime.combine(self._first_sunday(y, 4), datetime.time(3, 0))
+        naive = dt.replace(tzinfo=None)
+        if naive >= start:
+            return True
+        if naive < end:
+            # 02:00-03:00 on the April changeover day happens twice; the
+            # second pass (fold=1) is already standard time.
+            return not (dt.fold and naive >= end - datetime.timedelta(hours=1))
+        return False
+
+    def utcoffset(self, dt):
+        if dt is None:
+            return None
+        return self._DST if self._is_dst_local(dt) else self._STD
+
+    def dst(self, dt):
+        if dt is None:
+            return None
+        return datetime.timedelta(hours=1) if self._is_dst_local(dt) else datetime.timedelta(0)
+
+    def tzname(self, dt):
+        if dt is None:
+            return None
+        return "AEDT" if self._is_dst_local(dt) else "AEST"
+
+    def fromutc(self, dt):
+        y = dt.year
+        start_utc = datetime.datetime.combine(
+            self._first_sunday(y, 10), datetime.time(2, 0)) - self._STD
+        end_utc = datetime.datetime.combine(
+            self._first_sunday(y, 4), datetime.time(3, 0)) - self._DST
+        naive = dt.replace(tzinfo=None)
+        off = self._DST if (naive >= start_utc or naive < end_utc) else self._STD
+        local = naive + off
+        fold = 0
+        if off == self._STD:
+            end_local = datetime.datetime.combine(self._first_sunday(y, 4), datetime.time(3, 0))
+            if end_local - datetime.timedelta(hours=1) <= local < end_local:
+                fold = 1
+        return local.replace(tzinfo=self, fold=fold)
+
+
+_TZ_WARNED = False
+
+
 def _client_tz():
+    global _TZ_WARNED
     if ZoneInfo is not None:
         try:
             return ZoneInfo(CLIENT_TIME_ZONE)
         except Exception:
             pass
-    return datetime.timezone.utc
+    if not _TZ_WARNED:
+        _TZ_WARNED = True
+        logger.warning(
+            "Timezone database not found on this server - using the built-in "
+            "%s rules (AEST/AEDT). Installing tzdata is optional.",
+            CLIENT_TIME_ZONE)
+    return _SydneyTZ()
 
 
 def client_today():
@@ -76,32 +144,37 @@ def reporting_dates_for(product, sale_date, is_card_sale, today=None):
                                   are reported once the release date arrives)
       release_date in future   -> not reportable yet (both None)
 
-    ARIA additionally needs product.report_to_aria = true. Two guards kept
-    from earlier client rules: only CARD sales go to ARIA, and only ARIA-
-    reportable categories (a never-categorised product defaults to
-    report_to_aria=true in the DB, but the UI shows it as "not reportable").
+    ARIA additionally needs product.report_to_aria = true.
     CLAU dates have no such conditions.
     """
+    # Bundles themselves never get reported. Only their unpacked items do.
+    if product.category == "Define Bundle":
+        return None, None
+
     today = today or client_today()
     release = product.release_date
 
+    local_sale_dt = sale_date.astimezone(_client_tz()) if sale_date else None
+    local_sale_d = local_sale_dt.date() if local_sale_dt else None
+
     if release is None:
-        aria_base = sale_date
-        clau = sale_date.date() if sale_date else None
+        aria_base = local_sale_d
+        clau = local_sale_d
     elif release <= today:
-        aria_base = _midnight(release)
+        aria_base = release
         clau = release
     else:
         return None, None
 
     aria = None
-    if (
-        is_card_sale
-        and product.report_to_aria
-        and is_category_aria_reportable(product.category)
-    ):
+    if is_card_sale and product.report_to_aria:
         aria = aria_base
     return aria, clau
+
+
+def _later(new, current):
+    """True if `new` should replace `current` as a header date (latest wins)."""
+    return current is None or new > current
 
 
 def apply_reporting_dates(sale, detail, product, sync_started_at=None, is_card_sale=True):
@@ -115,17 +188,36 @@ def apply_reporting_dates(sale, detail, product, sync_started_at=None, is_card_s
 
     for obj in (sale, detail):
         fields = []
+        # The line takes its own date; the sale header only ever moves FORWARD
+        # to the latest line date (refresh_reporting_dates re-derives it fully
+        # after every sync).
+        is_header = obj is sale
         if aria is not None and obj.aria_reporting_date != aria:
-            obj.aria_reporting_date = aria
-            fields.append("aria_reporting_date")
+            if not is_header or _later(aria, obj.aria_reporting_date):
+                obj.aria_reporting_date = aria
+                fields.append("aria_reporting_date")
         if clau is not None and obj.clau_reporting_date != clau:
-            obj.clau_reporting_date = clau
-            fields.append("clau_reporting_date")
+            if not is_header or _later(clau, obj.clau_reporting_date):
+                obj.clau_reporting_date = clau
+                fields.append("clau_reporting_date")
         if fields:
             obj.save(update_fields=fields)
 
 
+def is_release_held(product, today=None):
+    """True while the product's release date is still in the future: its
+    unreported lines must carry NO reporting dates (presale hold)."""
+    today = today or client_today()
+    return product.release_date is not None and product.release_date > today
+
+
 def refresh_reporting_dates(connection, today=None):
+    """Re-derive reporting dates (and sale.is_presale) for EVERY unreported
+    line of the connection, so a release date set / changed after the sync
+    treats old and new lines the same:
+      - release date in the future -> aria + clau dates are CLEARED (hold)
+      - otherwise                  -> dates set per reporting_dates_for()
+    """
     today = today or client_today()
     qs = (
         SaleDetail.objects.filter(connection=connection, sale__reported_flag=False)
@@ -133,40 +225,108 @@ def refresh_reporting_dates(connection, today=None):
         .order_by("sale_id", "created_at")
     )
     sales = {}          # share ONE Sale object per sale across its lines
-    sale_done = set()   # sale header takes its dates from its FIRST line only
+    presale_sales = set()  # sales with a line sold before its product's release date
     touched_sales, touched_details = set(), []
+    held_lines = 0
+
+    # Pass 1: Process lines and determine if the whole sale is held
+    sale_dates = {} # sale_id -> {'aria': None, 'clau': None, 'is_held': False}
     for d in qs.iterator(chunk_size=500):
         product = d.variant.product if d.variant_id else None
         if product is None:
             continue
         sale = sales.setdefault(d.sale_id, d.sale)
+        if d.sale_id not in sale_dates:
+            sale_dates[d.sale_id] = {'aria': None, 'clau': None, 'is_held': False}
+
+        # A Define Bundle line is never reported (only its unpacked items are),
+        # so it must carry NO dates, whatever report_to_aria / release_date say.
+        # Clear any stamped earlier, e.g. while the line still pointed at a
+        # non-bundle product of a previous connection.
+        if product.category == "Define Bundle":
+            if d.aria_reporting_date is not None or d.clau_reporting_date is not None:
+                d.aria_reporting_date = None
+                d.clau_reporting_date = None
+                touched_details.append(d)
+            continue
+
+        local_sale_d = (sale.sale_date.astimezone(_client_tz()).date()
+                        if sale.sale_date else None)
+        if product.release_date and local_sale_d and product.release_date > local_sale_d:
+            presale_sales.add(d.sale_id)
         # Fix: Restore support for MANUAL_CARD_ENTRY and CARD_ON_FILE
         is_card = sale.payment_type in ('CREDIT_CARD', 'MANUAL_CARD_ENTRY', 'CARD_ON_FILE')
-        aria, clau = reporting_dates_for(
-            product, sale.sale_date, is_card, today)
+        held = is_release_held(product, today)
+        
+        if held:
+            aria, clau = None, None
+            held_lines += 1
+            sale_dates[d.sale_id]['is_held'] = True
+        else:
+            aria, clau = reporting_dates_for(product, sale.sale_date, is_card, today)
+
         changed = False
-        if aria is not None and d.aria_reporting_date != aria:
-            d.aria_reporting_date, changed = aria, True
-        if clau is not None and d.clau_reporting_date != clau:
-            d.clau_reporting_date, changed = clau, True
+        if held:
+            # presale hold: wipe whatever an earlier sync stamped
+            if d.aria_reporting_date is not None:
+                d.aria_reporting_date, changed = None, True
+            if d.clau_reporting_date is not None:
+                d.clau_reporting_date, changed = None, True
+        else:
+            if aria is not None and d.aria_reporting_date != aria:
+                d.aria_reporting_date, changed = aria, True
+            if clau is not None and d.clau_reporting_date != clau:
+                d.clau_reporting_date, changed = clau, True
         if changed:
             touched_details.append(d)
-        if d.sale_id in sale_done:
-            continue
-        sale_done.add(d.sale_id)
-        if aria is not None and sale.aria_reporting_date != aria:
-            sale.aria_reporting_date = aria
-            touched_sales.add(sale.pk)
-        if clau is not None and sale.clau_reporting_date != clau:
-            sale.clau_reporting_date = clau
-            touched_sales.add(sale.pk)
+
+        # Header date = the LATEST line date (ARIA and CLAU each on their own),
+        # so a sale reports once its last item is released. The old "first
+        # line wins" rule gave inconsistent headers (and could mix an early
+        # CLAU date with a later ARIA date taken from a different line).
+        # Bundle lines were skipped above, so only real items count here.
+        if aria and (not sale_dates[d.sale_id]['aria'] or aria > sale_dates[d.sale_id]['aria']):
+            sale_dates[d.sale_id]['aria'] = aria
+        if clau and (not sale_dates[d.sale_id]['clau'] or clau > sale_dates[d.sale_id]['clau']):
+            sale_dates[d.sale_id]['clau'] = clau
+
+    # Pass 2: Apply dates to the Sale headers
+    for sale_id, dates in sale_dates.items():
+        sale = sales[sale_id]
+        
+        if dates['is_held']:
+            if sale.aria_reporting_date is not None:
+                sale.aria_reporting_date = None
+                touched_sales.add(sale.pk)
+            if sale.clau_reporting_date is not None:
+                sale.clau_reporting_date = None
+                touched_sales.add(sale.pk)
+        else:
+            if dates['aria'] is not None and sale.aria_reporting_date != dates['aria']:
+                sale.aria_reporting_date = dates['aria']
+                touched_sales.add(sale.pk)
+            if dates['clau'] is not None and sale.clau_reporting_date != dates['clau']:
+                sale.clau_reporting_date = dates['clau']
+                touched_sales.add(sale.pk)
+
+    # is_presale: sold before a release date (or a webstore order, as the
+    # platform sync already flags). Recomputed for every unreported sale seen.
+    presale_changed = []
+    for pk, sale in sales.items():
+        want = (pk in presale_sales) or sale.sale_channel == "WEBSTORE"
+        if sale.is_presale != want:
+            sale.is_presale = want
+            presale_changed.append(sale)
 
     SaleDetail.objects.bulk_update(
         touched_details, ["aria_reporting_date", "clau_reporting_date"], batch_size=500)
     Sale.objects.bulk_update(
         [sales[pk] for pk in touched_sales],
         ["aria_reporting_date", "clau_reporting_date"], batch_size=500)
-    return {"sale_lines_dated": len(touched_details), "sales_dated": len(touched_sales)}
+    if presale_changed:
+        Sale.objects.bulk_update(presale_changed, ["is_presale"], batch_size=500)
+    return {"sale_lines_dated": len(touched_details), "sales_dated": len(touched_sales),
+            "lines_held": held_lines, "sales_flagged_presale": len(presale_changed)}
 
 
 # --------------------------------------------------------------------------
@@ -266,6 +426,61 @@ def refresh_location_locids(connection):
     return {"locations_locid_filled": updated}
 
 
+def build_formatted_address(city, province, postal_code, address1=None):
+    """Display address from the platform's suburb / state / postcode fields in
+    the locality format used everywhere else, e.g. 'FITZROY VIC 3065'.
+    Prefers the StandardLocality text (same wording the predictive menu gives)
+    when suburb + postcode match one."""
+    match = find_locality(city, province, postal_code)
+    if match and match.locality:
+        return match.locality
+    parts = [(city or "").strip().upper(), _state_code(province) or "",
+             (postal_code or "").strip()]
+    built = " ".join(p for p in parts if p)
+    # Platform gave no suburb/state/postcode (common for Square locations):
+    # fall back to the street line so the field is not left blank.
+    return built or (address1 or "").strip()
+
+
+def refresh_location_addresses(connection):
+    """Fill formatted_address ONLY where it has never been populated. A value
+    already there (typed by the client or picked from the predictive menu) is
+    never overwritten."""
+    filled = 0
+    qs = SalesLocation.objects.filter(connection=connection).filter(
+        Q(formatted_address__isnull=True) | Q(formatted_address=""))
+    for loc in qs:
+        addr = build_formatted_address(loc.city, loc.province, loc.postal_code, loc.address1)
+        if not addr:
+            continue
+        loc.formatted_address = addr
+        loc.save(update_fields=["formatted_address", "updated_at"])
+        filled += 1
+    return {"locations_address_filled": filled}
+
+
+# --------------------------------------------------------------------------
+# Sale ownership (Sale.external_order_id is unique across ALL connections)
+# --------------------------------------------------------------------------
+def other_connection_owns_sale(connection, order_id):
+    """True when this order already belongs to ANOTHER connection that `connection`
+    must not take over - so the sync skips it instead of re-stamping the sale:
+      * an INACTIVE connection never takes a sale from another connection
+      * an ACTIVE connection may take a sale from an inactive one (a re-connect)
+      * two ACTIVE connections: the current owner keeps it (no flip-flopping)
+    A sale nobody owns yet is created normally."""
+    owner = (
+        Sale.objects.filter(external_order_id=order_id)
+        .exclude(connection_id=connection.pk)
+        .select_related("connection").first()
+    )
+    if owner is None:
+        return False
+    if not connection.is_active:
+        return True
+    return owner.connection.is_active
+
+
 # --------------------------------------------------------------------------
 # 5.4  SSID + SalesSummary
 # --------------------------------------------------------------------------
@@ -282,6 +497,11 @@ def _expected_type(sale):
 
 
 def _product_category(detail):
+    # Structural rule: Never let live product edits override historical bundle markers
+    saved_cat = detail.product_category or ""
+    if saved_cat.startswith("Bundle-") or saved_cat == "Define Bundle":
+        return saved_cat
+    
     if detail.variant and detail.variant.product:
         return detail.variant.product.category
     return detail.product_category
@@ -298,7 +518,7 @@ def build_summary_groups(connections):
     line (newest first) - SalesView serialises these directly.
     """
     sales = list(
-        Sale.objects.filter(connection__in=connections)
+        Sale.objects.filter(connection__in=connections, connection__is_active=True)
         .select_related("connection")
         .prefetch_related("details__variant__product")
         .order_by("-sale_date")
@@ -311,7 +531,8 @@ def build_summary_groups(connections):
         if s.type != expected:
             s.type = expected
             changed.append("type")
-        day = s.sale_date.date() if s.sale_date else None
+        local_dt = s.sale_date.astimezone(_client_tz()) if s.sale_date else None
+        day = local_dt.date() if local_dt else None
         ssid = f"{day.toordinal() if day else 0}-{s.type}"
         if s.ssid != ssid:
             s.ssid = ssid
@@ -377,6 +598,10 @@ def build_summary_groups(connections):
 
 
 def refresh_sales_summaries(connection):
+    # An inactive (disconnected / replaced) connection keeps syncing, but it must
+    # never create summary rows - the sales belong to the client's active connection.
+    if not connection.is_active:
+        return {"summary_lines": 0, "summaries_skipped_inactive": 1}
     lines = build_summary_groups([connection])
     return {"summary_lines": len(lines)}
 
@@ -450,9 +675,43 @@ def unpack_bundles_for_sale(sale, connection, sync_started_at):
                         is_card_sale=is_card
                     )
 
+def refresh_line_categories(connection):
+    """Post-sync step: bring the category/title snapshot on EVERY unreported
+    sale line back in line with its product. Platform sync only re-saves
+    orders inside the current ARIA period, so category changes made on the
+    Products tab never reached older unreported lines.
+    Bundle- lines are rebuilt by refresh_bundles; Define Bundle parents are
+    fixed by unpack_bundles_for_sale, so both are left alone here."""
+    qs = (
+        SaleDetail.objects
+        .filter(connection=connection, sale__reported_flag=False)
+        .exclude(product_category__startswith="Bundle-")
+        .select_related("variant__product")
+    )
+    changed = []
+    for d in qs.iterator(chunk_size=500):
+        product = d.variant.product if d.variant_id else None
+        if product is None:
+            continue
+        dirty = False
+        if d.product_category != product.category:
+            d.product_category, dirty = product.category, True
+        if product.title and d.product_title != product.title:
+            d.product_title, dirty = product.title, True
+        if dirty:
+            changed.append(d)
+    SaleDetail.objects.bulk_update(
+        changed, ["product_category", "product_title"], batch_size=500)
+    return {"line_categories_refreshed": len(changed)}
+
+
 def refresh_bundles(connection):
     """Post-sync step: Rebuilds bundle unpacked rows for unreported sales so edits apply retroactively."""
     from django.db.models import Q
+    
+    # Client rule: Clear json_bundle during sync when the category isn't Define Bundle
+    Product.objects.filter(connection=connection).exclude(category='Define Bundle').exclude(json_bundle__isnull=True).update(json_bundle=None)
+
     unreported_sales = Sale.objects.filter(
         Q(details__variant__product__category='Define Bundle') |
         Q(details__product_category__startswith='Bundle-'),  # clears orphans if a bundle is un-defined
@@ -478,6 +737,8 @@ def refresh_after_sync(connection, today=None):
     steps = (
         ("identifiers", lambda: refresh_product_identifiers(connection)),
         ("location_locids", lambda: refresh_location_locids(connection)),
+        ("location_addresses", lambda: refresh_location_addresses(connection)),
+        ("line_categories", lambda: refresh_line_categories(connection)),
         ("bundles", lambda: refresh_bundles(connection)),
         ("sales_summaries", lambda: refresh_sales_summaries(connection)),
         ("reporting_dates", lambda: refresh_reporting_dates(connection, today)),
